@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/gs/gs-921-linux-x86_64 -sDEVICE=txtwrite -sOutputFile=- -dNOPAUSE -dQUIET -dBATCH -dSAFER $*

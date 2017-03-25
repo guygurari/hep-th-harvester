@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/s3cmd-master/s3cmd ls --requester-pays s3://arxiv/pdf/\* > arxiv-pdfs.txt
