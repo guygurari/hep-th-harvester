@@ -51,7 +51,7 @@ sub upload_chunk_to_s3 {
     my $compressed = "$id.tbz";
 
     execute("tar cvjf $compressed $id/*.pdf");
-    execute("s3cmd put $compressed $bucket_url");
+    execute("s3cmd put --acl-public $compressed $bucket_url");
     execute("rm $compressed");
     execute("rm -r $id");
 
