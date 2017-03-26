@@ -1,4 +1,4 @@
-package ArxivPdf;
+package Arxiv;
 
 use IO::File;
 use DBI;

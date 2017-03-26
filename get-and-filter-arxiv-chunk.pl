@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use FindBin qw($Script $Dir);
 use IO::File;
-use ArxivPdf;
+use Arxiv;
 
 my $category = 'hep-th';
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";

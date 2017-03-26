@@ -5,7 +5,7 @@ use warnings;
 use FindBin qw($Script);
 use Getopt::Long;
 use IO::File;
-use ArxivPdf;
+use Arxiv;
 
 sub usage {
     print "Usage: $Script [--help] [--category hep-th] [--delete] file1.pdf file2.pdf ...\n\n";
