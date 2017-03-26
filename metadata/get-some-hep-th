@@ -1,0 +1,2 @@
+#!/bin/bash
+curl 'http://export.arxiv.org/oai2?verb=ListRecords&from=2016-01-01&metadataPrefix=arXiv&set=physics:hep-th' > some-hep-th.xml
