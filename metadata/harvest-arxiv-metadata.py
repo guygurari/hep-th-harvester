@@ -28,8 +28,13 @@ if is_new_database:
     conn.commit()
     start_date = earliest_datestamp
 else:
+    print "Searching for latest datestamp..."
     c.execute("SELECT MAX(datestamp) FROM papers")
     start_date = c.fetchone()[0]
+    # Increase by one day to avoid re-downloading the papers from the last day
+    start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+    start_date = start_date + datetime.timedelta(days=1)
+    start_date = start_date.strftime("%Y-%m-%d")
     
 print "Start date: %s" % start_date
 
@@ -108,7 +113,12 @@ def harvest(conn, c, arxiv_set):
         xml = response.read()
         root = ET.fromstring(xml)
 
-        for record in root.find(OAI+'ListRecords').findall(OAI+"record"):
+        all_records = root.find(OAI+'ListRecords')
+
+        if all_records is None:
+            break
+            
+        for record in all_records.findall(OAI+"record"):
             add_record(c, record)
 
         conn.commit()
