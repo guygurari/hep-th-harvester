@@ -1,6 +1,24 @@
 package ArxivPdf;
 
+use IO::File;
+
 my $ghostscript = "$ENV{HOME}/gs/gs-921-linux-x86_64";
+my $paper_ids;
+
+sub load_paper_ids {
+    local $_;
+    my $ids_file = shift;
+    my $f = IO::File->new("< $ids_file") || die;
+    $paper_ids = {};
+
+    while (<$f>) {
+        chomp;
+        $paper_ids->{$_} = 1;
+    }
+
+    $f->close();
+    return 0;
+}
 
 # If the filename contains the category, we can use that.
 # Old filenames look like this:
@@ -31,19 +49,29 @@ sub is_pdf_in_category {
         return ($pdf_basename =~ /^$category\d/);
     }
 
-	my $prog = IO::File->new(
-			"$ghostscript -sDEVICE=txtwrite -sOutputFile=- " .
-			"-dNOPAUSE -dQUIET -dBATCH -dSAFER $pdf |");
-	die unless defined $prog;
+    if (defined $paper_ids) {
+# User the IDs database to search for paper
+        my $id = $pdf_basename;
+        $id =~ s/\.pdf//;
+        return exists $paper_ids->{$id};
+    }
+    else {
+        my $prog = IO::File->new(
+                "$ghostscript -sDEVICE=txtwrite -sOutputFile=- " .
+                "-dNOPAUSE -dQUIET -dBATCH -dSAFER $pdf |");
+        die unless defined $prog;
 
-	while (<$prog>) {
-        if (/\barXiv:/) {
-            $prog->close();
-            return /\b$category\b/;
+        while (<$prog>) {
+            if (/\barXiv:/) {
+                $prog->close();
+                return /\b$category\b/;
+            }
         }
-	}
 
-	$prog->close();
+        $prog->close();
+    }
+
 	return 0;
 }
 
+1;
