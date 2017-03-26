@@ -6,3 +6,9 @@ download arxiv tar files, extract PDFs, delete everything that's not from hep-th
 
 upload-to-s3.pl - 
 continuously look for newly processed hep-th PDFs, and upload them to my S3 bucket.
+
+One problem is that get-... works faster than upload-..., which compresses the files unnecessarilly.
+Nice to have:
+1. Don't compress the files before uploadng. This might require going back and uncompressing existing files (not too bad).
+2. Upload files as part of get-... so they don't get out of step. The issue is that we download chunks but upload all
+a month's papers at once. So we need to add this logic to get-....
