@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bucket=s3://hep-th
+
+s3cmd ls $bucket
+echo ''
+s3cmd du $bucket
