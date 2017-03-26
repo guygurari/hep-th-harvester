@@ -25,6 +25,10 @@ if is_new_database:
     c.execute('''CREATE TABLE authors
                    (first_name text, last_name text, affiliation text,
                     paper_id text)''')
+    c.execute('''CREATE UNIQUE INDEX id on papers (id)''')
+    c.execute('''CREATE INDEX datestamp on papers (datestamp)''')
+    c.execute('''CREATE INDEX paper_id on authors (paper_id)''')
+    c.execute('''CREATE INDEX author_name on authors (last_name, first_name)''')
     conn.commit()
     start_date = earliest_datestamp
 else:
