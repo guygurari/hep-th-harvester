@@ -33,37 +33,37 @@ else:
     
 print "Start date: %s" % start_date
 
+def get_text(found):
+    if found is None:
+        return ''
+    else:
+        return found.text
+
 def add_record(c, record):
     header = record.find(OAI+'header')
     meta = record.find(OAI+'metadata')
     info = meta.find(ARXIV+"arXiv")
 
     oai_id = header.find(OAI+'identifier').text
-    title = info.find(ARXIV+"title").text
-    datestamp = header.find(OAI+'datestamp').text
+    title = get_text(info.find(ARXIV+"title"))
+    datestamp = get_text(header.find(OAI+'datestamp'))
     paper_id = info.find(ARXIV+"id").text
-    abstract = info.find(ARXIV+"abstract").text.strip()
+    abstract = get_text(info.find(ARXIV+"abstract")).strip()
 
     print "adding: %s '%s'" % (datestamp, title)
 
-    created = info.find(ARXIV+"created").text
+    created = get_text(info.find(ARXIV+"created"))
     #created = datetime.datetime.strptime(created, "%Y-%m-%d")
-    categories = info.find(ARXIV+"categories").text
+    categories = get_text(info.find(ARXIV+"categories"))
 
     # if there is more than one DOI use the first one
     # often the second one (if it exists at all) refers
     # to an eratum or similar
-    doi = info.find(ARXIV+"doi")
-    if doi is None:
-        doi = ''
-    else:
-        doi = doi.text.split()[0]
+    doi = get_text(info.find(ARXIV+"doi"))
+    if doi != '':
+        doi = doi.split()[0]
 
-    comments = info.find(ARXIV+"comments")
-    if comments is not None:
-        comments = comments.text
-    else:
-        comments = ''
+    comments = get_text(info.find(ARXIV+"comments"))
 
     # (id text, oai_id text, title text, datestamp text,
     #  abstract text, categories text, created text,
@@ -76,13 +76,9 @@ def add_record(c, record):
     authors = info.find(ARXIV+"authors")
     if authors is not None:
         for author in authors.findall(ARXIV+'author'):
-            last_name = author.find(ARXIV+'keyname').text
-            first_name = author.find(ARXIV+'forenames').text
-            affiliation = author.find(ARXIV+'affiliation')
-            if affiliation is None:
-                affiliation = ''
-            else:
-                affiliation = affiliation.text
+            last_name = get_text(author.find(ARXIV+'keyname'))
+            first_name = get_text(author.find(ARXIV+'forenames'))
+            affiliation = get_text(author.find(ARXIV+'affiliation'))
 
             #print "author-params: ", (first_name, last_name, affiliation, paper_id)
 
@@ -96,7 +92,7 @@ def harvest(conn, c, arxiv_set):
            "from=%s&metadataPrefix=arXiv&set=%s" % (start_date, arxiv_set))
     
     while True:
-        print "fetching", url
+        print "\n>>> fetching %s\n" % url
         try:
             response = urllib2.urlopen(url)
         except urllib2.HTTPError, e:
