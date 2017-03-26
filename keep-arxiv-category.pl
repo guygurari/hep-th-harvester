@@ -15,7 +15,6 @@ sub usage {
 my $help = 0;
 my $category = 'hep-th';
 my $delete = 0;
-#my $paper_ids_filename = "metadata/jamie/all-hep-th-papers.txt";
 
 GetOptions(
     'help' => \$help,
@@ -32,8 +31,6 @@ if (scalar(@ARGV) < 1 || !defined $category) {
     usage();
     exit 1;
 }
-
-#ArxivPdf::load_paper_ids($paper_ids_filename);
 
 my @files = @ARGV;
 

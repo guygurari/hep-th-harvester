@@ -17,21 +17,6 @@ sub is_paper_in_db {
     return defined $row;
 }
 
-#sub load_paper_ids {
-#    local $_;
-#    my $ids_file = shift;
-#    my $f = IO::File->new("< $ids_file") || die;
-#    $paper_ids = {};
-#
-#    while (<$f>) {
-#        chomp;
-#        $paper_ids->{$_} = 1;
-#    }
-#
-#    $f->close();
-#    return 0;
-#}
-
 # If the filename contains the category, we can use that.
 # Old filenames look like this:
 #        hep-th9211008.pdf
@@ -61,16 +46,15 @@ sub is_pdf_in_category {
     $pdf_basename =~ s/.*\///;
 
     if ($pdf_basename =~ /^[a-zA-Z]/) {
-#print "(OLD FILE) ";
+        #print "(OLD FILE) ";
         return ($pdf_basename =~ /^$category\d/);
     }
 
     if (defined $dbh) {
-# User the IDs database to search for paper
+        # User the IDs database to search for paper
         my $id = $pdf_basename;
         $id =~ s/\.pdf//;
         return is_paper_in_db($id);
-#return exists $paper_ids->{$id};
     }
     else {
         my $prog = IO::File->new(
