@@ -48,13 +48,12 @@ while (1) {
 
 sub upload_chunk_to_s3 {
     my $id = shift;
-    my $compressed = "$id.tbz";
+    my $tarball = "$id.tbz";
 
-    execute("tar cvjf $compressed $id/*.pdf");
-    execute("s3cmd put --acl-public $compressed $bucket_url");
-    execute("rm $compressed");
+    execute("tar cvjf $tarball $id/*.pdf");
+    execute("s3cmd put --acl-public $tarball $bucket_url");
+    execute("rm $tarball");
     execute("rm -r $id");
-
 }
 
 sub execute {
