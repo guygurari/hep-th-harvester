@@ -10,13 +10,13 @@ my $category = 'hep-th';
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";
 #my $filter = "$Dir/keep-arxiv-category.pl";
 my $done_filename = "done-arxiv-pdfs.txt";
-my $paper_ids_filename = "metadata/jamie/all-hep-th-papers.txt";
+#my $paper_ids_filename = "metadata/jamie/all-hep-th-papers.txt";
 
 my $chunk_list_file = IO::File->new("< arxiv-pdfs.txt") || die;
 my $done = read_done_chunks();
 my $done_file = IO::File->new(">> $done_filename");
 
-ArxivPdf::load_paper_ids($paper_ids_filename);
+#ArxivPdf::load_paper_ids($paper_ids_filename);
 
 while (my $line = <$chunk_list_file>) {
     chomp $line;
