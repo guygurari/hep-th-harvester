@@ -53,7 +53,7 @@ while (my $line = <$chunk_list_file>) {
     foreach my $pdf (@pdfs) {
         print "$pdf .. ";
 
-        if ( ArxivPdf::is_pdf_in_category($pdf, $category)) {
+        if ( Arxiv::is_pdf_in_category($pdf, $category)) {
             print " in $category\n";
         }
         else {

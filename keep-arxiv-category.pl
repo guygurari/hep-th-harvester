@@ -36,7 +36,7 @@ my @files = @ARGV;
 
 foreach my $pdf (@files) {
 	print "$pdf ... ";
-	if (ArxivPdf::is_pdf_in_category($pdf, $category)) {
+	if (Arxiv::is_pdf_in_category($pdf, $category)) {
 		print "in $category !!!\n";
 	}	
 	else {
