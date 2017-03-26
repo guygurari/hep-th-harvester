@@ -4,18 +4,8 @@ import os.path
 import time
 import urllib2
 import datetime
-#from itertools import ifilter
-#from collections import Counter, defaultdict
 import xml.etree.ElementTree as ET
-
-#from bs4 import BeautifulSoup
-#import matplotlib.pylab as plt
-import pandas as pd
-#import numpy as np
-#import bibtexparser
 import sqlite3 as sql
-
-#pd.set_option('mode.chained_assignment','warn')
 
 OAI = "{http://www.openarchives.org/OAI/2.0/}"
 ARXIV = "{http://arxiv.org/OAI/arXiv/}"
@@ -30,7 +20,7 @@ c = conn.cursor()
 if is_new_database:
     c.execute('''CREATE TABLE papers
                    (id text, oai_id text, title text, datestamp text,
-                    abstract text, category text, created text,
+                    abstract text, categories text, created text,
                     doi text, comments text)''')
     c.execute('''CREATE TABLE authors
                    (first_name text, last_name text, affiliation text,
@@ -54,12 +44,11 @@ def add_record(c, record):
     paper_id = info.find(ARXIV+"id").text
     abstract = info.find(ARXIV+"abstract").text.strip()
 
-    print "datestamp: %s" % datestamp
+    print "adding: %s '%s'" % (datestamp, title)
 
     created = info.find(ARXIV+"created").text
     #created = datetime.datetime.strptime(created, "%Y-%m-%d")
     categories = info.find(ARXIV+"categories").text
-    category = categories.split()[0] # TODO what about the others?
 
     # if there is more than one DOI use the first one
     # often the second one (if it exists at all) refers
@@ -80,10 +69,8 @@ def add_record(c, record):
     #  abstract text, categories text, created text,
     #  doi text, comments text))
 
-    # print "params: ", (paper_id, oai_id, title, datestamp, abstract, category,
-    #            created, doi, comments)
     c.execute('''INSERT INTO papers VALUES (?,?,?,?,?,?,?,?,?)''',
-              (paper_id, oai_id, title, datestamp, abstract, category,
+              (paper_id, oai_id, title, datestamp, abstract, categories,
                created, doi, comments))
 
     authors = info.find(ARXIV+"authors")
@@ -99,8 +86,6 @@ def add_record(c, record):
 
             #print "author-params: ", (first_name, last_name, affiliation, paper_id)
 
-            #(first_name text, last_name text, affiliation text,
-            # paper_id text))
             c.execute('''INSERT INTO authors VALUES (?,?,?,?)''',
                       (first_name, last_name, affiliation, paper_id))
             
