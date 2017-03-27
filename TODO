@@ -1,0 +1,8 @@
+Currently get-and-filter-arxiv-chunk.pl downloads and upload-to-s3.pl
+uploads. They can get out of sync and it's messy.
+
+There's also no real need to tar-bzip the PDFs. It's slow and we can just 
+store individual PDFs in S3.
+
+Have the get-and-filter-arxiv-chunk.pl script upload each PDF it is done with.
+
