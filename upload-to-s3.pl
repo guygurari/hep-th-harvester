@@ -50,9 +50,15 @@ sub upload_chunk_to_s3 {
     my $id = shift;
     my $tarball = "$id.tbz";
 
-    execute("tar cvjf $tarball $id/*.pdf");
-    execute("s3cmd put --acl-public $tarball $bucket_url");
-    execute("rm $tarball");
+    my $files_pat = "$id/*.pdf";
+    my @files_to_upload = glob($files_pat);
+
+    if (scalar(@files_to_upload) > 0)  {
+        execute("tar cvjf $tarball $files_pat");
+        execute("s3cmd put --acl-public $tarball $bucket_url");
+        execute("rm $tarball");
+    }
+
     execute("rm -r $id");
 }
 
