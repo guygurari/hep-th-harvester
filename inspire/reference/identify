@@ -1,0 +1,2 @@
+#!/bin/zsh
+curl 'https://inspirehep.net/oai2d?verb=Identify'
