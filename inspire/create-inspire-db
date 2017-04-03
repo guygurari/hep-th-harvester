@@ -6,5 +6,5 @@ filename=inspire.sqlite
    && print "Database file $filename already exists" \
    && exit
 
-sqlite3 $filename < create_db.sql
+sqlite3 $filename < create-inspire-db.sql
   
