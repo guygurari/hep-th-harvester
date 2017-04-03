@@ -1,0 +1,16 @@
+Some useful URLs for INSPIRE OAI interface. See OAI-PMH.xsd for the full API description.
+
+Links to useful schemas and earliest record date:
+https://inspirehep.net/oai2d?verb=Identify
+
+List available data sets: (e.g. INSPIRE:HEP)
+https://inspirehep.net/oai2d?verb=ListSets
+
+List available record formats: (e.g. marcxml)
+https://inspirehep.net/oai2d?verb=ListMetadataFormats
+
+List some records:
+https://inspirehep.net/oai2d?verb=ListRecords&set=INSPIRE:HEP&metadataPrefix=emarcxml&from=2017-01-01&until=2017-01-01
+
+
+

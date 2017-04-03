@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://inspirehep.net/css/oai2.xsl.v1.0" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2017-03-30T21:53:01Z</responseDate><request verb="ListMetadataFormats">http://inspirehep.net/oai2d</request>
+    <ListMetadataFormats>
+<metadataFormat>
+    <metadataPrefix>marcxml</metadataPrefix>
+    <schema>http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd</schema>
+    <metadataNamespace>http://www.loc.gov/MARC21/slim</metadataNamespace>
+</metadataFormat>
+<metadataFormat>
+    <metadataPrefix>emarcxml</metadataPrefix>
+    <schema>http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd</schema>
+    <metadataNamespace>http://www.loc.gov/MARC21/slim</metadataNamespace>
+</metadataFormat>
+<metadataFormat>
+    <metadataPrefix>oai_dc</metadataPrefix>
+    <schema>http://www.openarchives.org/OAI/1.1/dc.xsd</schema>
+    <metadataNamespace>http://purl.org/dc/elements/1.1/</metadataNamespace>
+</metadataFormat>
+</ListMetadataFormats>
+</OAI-PMH>
+

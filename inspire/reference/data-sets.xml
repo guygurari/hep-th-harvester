@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://inspirehep.net/css/oai2.xsl.v1.0" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+<responseDate>2017-03-30T21:52:07Z</responseDate><request verb="ListSets">http://inspirehep.net/oai2d</request><ListSets>
+  <set>
+<setSpec>INSPIRE:HepNames</setSpec><setName>INSPIRE HepNames</setName>   </set>
+  <set>
+<setSpec>INSPIRE</setSpec><setName>INSPIRE</setName>   </set>
+  <set>
+<setSpec>INSPIRE:Institutions</setSpec><setName>INSPIRE Institutions</setName>   </set>
+  <set>
+<setSpec>CERN</setSpec><setName>CERN</setName>   </set>
+  <set>
+<setSpec>INSPIRE:JournalsNew</setSpec><setName>INSPIRE:JournalsNew</setName>   </set>
+  <set>
+<setSpec>INSPIRE:Conferences</setSpec><setName>Conferences</setName>   </set>
+  <set>
+<setSpec>INSPIRE:Journals</setSpec><setName>INSPIRE Journals</setName>   </set>
+  <set>
+<setSpec>INSPIRE:HEP</setSpec><setName>INSPIRE HEP publications</setName>   </set>
+  <set>
+<setSpec>CERN:arXiv</setSpec><setName>CERN arXiv records</setName>   </set>
+  <set>
+<setSpec>ForCDS</setSpec><setName>Records for CDS</setName>   </set>
+  <set>
+<setSpec>CDS</setSpec><setName>Records with a CDS Id</setName>   </set>
+  <set>
+<setSpec>ForSCOAP3</setSpec><setName>For SCOAP3</setName>   </set>
+  <set>
+<setSpec>INSPIRE:Jobs</setSpec><setName>INSPIRE Jobs</setName>   </set>
+  <set>
+<setSpec>INSPIRE:Experiments</setSpec><setName>INSPIRE Experiments</setName>   </set>
+</ListSets>
+</OAI-PMH>
+

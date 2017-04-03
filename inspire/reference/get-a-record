@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#curl https://inspirehep.net/record/451647?of=xm&ot=100,245
+curl https://inspirehep.net/record/1498126?of=xm
+

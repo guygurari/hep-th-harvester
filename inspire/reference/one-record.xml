@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+<record>
+  <controlfield tag="001">1498126</controlfield>
+  <controlfield tag="005">20170209031019.0</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">INSPIRETeX</subfield>
+    <subfield code="a">Cotler:2016fpe</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">DESY</subfield>
+    <subfield code="z">D16-kj47w</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">oai:arXiv.org:1611.04650</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">arXiv:1611.04650</subfield>
+    <subfield code="c">hep-th</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="a">SU-ITP-16-19</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="a">YITP-16-124</subfield>
+  </datafield>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">Cotler, Jordan S.</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+  </datafield>
+  <datafield tag="245" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">Black Holes and Random Matrices</subfield>
+  </datafield>
+  <datafield tag="246" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">Black Holes and Random Matrices</subfield>
+  </datafield>
+  <datafield tag="269" ind1=" " ind2=" ">
+    <subfield code="c">2016-11-14</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">73</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">73 pages, 15 figures</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="9">arXiv</subfield>
+    <subfield code="a">We argue that the late time behavior of horizon fluctuations in large anti-de Sitter (AdS) black holes is governed by the random matrix dynamics characteristic of quantum chaotic systems. Our main tool is the Sachdev-Ye-Kitaev (SYK) model, which we use as a simple model of a black hole. We use an analytically continued partition function $|Z(\beta +it)|^2$ as well as correlation functions as diagnostics. Using numerical techniques we establish random matrix behavior at late times. We determine the early time behavior exactly in a double scaling limit, giving us a plausible estimate for the crossover time to random matrix behavior. We use these ideas to formulate a conjecture about general large AdS black holes, like those dual to 4D super-Yang-Mills theory, giving a provisional estimate of the crossover time. We make some preliminary comments about challenges to understanding the late time dynamics from a bulk point of view.</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="b">arXiv</subfield>
+    <subfield code="u">http://arxiv.org/licenses/nonexclusive-distrib/1.0/</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="2">arXiv</subfield>
+    <subfield code="a">hep-th</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">Theory-HEP</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="2">arXiv</subfield>
+    <subfield code="a">cond-mat.stat-mech</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">General Physics</subfield>
+  </datafield>
+  <datafield tag="650" ind1="1" ind2="7">
+    <subfield code="2">arXiv</subfield>
+    <subfield code="a">quant-ph</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">matrix model: random</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">black hole: anti-de Sitter</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">horizon: fluctuation</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">correlation function</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">partition function</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">supersymmetry</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">duality: holography</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">chaos</subfield>
+  </datafield>
+  <datafield tag="695" ind1=" " ind2=" ">
+    <subfield code="2">INSPIRE</subfield>
+    <subfield code="a">numerical calculations</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Gur-Ari, Guy</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Hanada, Masanori</subfield>
+    <subfield code="u">Kyoto U.</subfield>
+    <subfield code="u">Kyoto U., Yukawa Inst., Kyoto</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Polchinski, Joseph</subfield>
+    <subfield code="u">UC, Santa Barbara</subfield>
+    <subfield code="u">Santa Barbara, KITP</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Saad, Phil</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Shenker, Stephen H.</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Stanford, Douglas</subfield>
+    <subfield code="u">Princeton, Inst. Advanced Study</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Streicher, Alexandre</subfield>
+    <subfield code="u">Stanford U., ITP</subfield>
+    <subfield code="u">UC, Santa Barbara</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Tezuka, Masaki</subfield>
+    <subfield code="u">Kyoto U.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">1842593</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/arXiv:1611.04650.pdf</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">10590</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-rmpt-b0.png</subfield>
+    <subfield code="y">00018 Left: The dip time $t_\mathrm{d}$ against $N$, for $\beta=0,1,5$. The lower and upper limits of the error bar indicate the range of data points with $g(t) &amp;lt; 1.04~g_\mathrm{min}$. Middle: Comparison of fits of the SYK $t_\mathrm{d}$ with exponential and power-law functions of $N$ for $\beta = 5$. Right: Plot of the plateau time $t_p$ against $N$, for $\beta = 0,1,5$.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">12500</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/q=2.png</subfield>
+    <subfield code="y">00013 At left we show the $q = 2$ standard saddle (blue/solid) and a subleading saddle with $n = 1$ flipped (red/dashed) and one with both $n = 2,6$ flipped (orange/dotted). At right we have the corresponding $q =4$ solutions. We use $\beta\mathcal{J} = 20\pi$.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">13540</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/oneSample.png</subfield>
+    <subfield code="y">00012 A single sample (red, erratic) of $g(t)$ is plotted together with the average of 90 samples (blue, smooth).</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">14061</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gp_beta_Nm10-34.png</subfield>
+    <subfield code="y">00019 Left: Plot of the plateau height against $\beta$ for $N=10,12,\ldots,34$. Right: Plot of the plateau height and $Z(2\beta)/Z(\beta)^2$ for $\beta=0,5$ against $N$. A clear mod--8 pattern can be seen. For $N\equiv0\ (\mathrm{mod}~8)$, $g_c(\beta)$ equals $Z(2\beta) / Z(\beta)^2$, which for $\beta=0$ equals $1/Z(\beta=0) = 2^{-N/2}$, otherwise $g_c(\beta) = 2 Z(2\beta) / Z(\beta)^2$ due to the degeneracy in the eigenvalue of the SYK Hamiltonian.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">14174</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gt_mm4SYK_Nm16-34W90b5.png</subfield>
+    <subfield code="y">00005 SYK $g(t, \beta)$ with $\beta=0,1,5$ and various $N$ values. The value at late times, which is equal to plateau height $g_p$, matches with $N_E Z(2\beta)/Z(\beta)^2$ as discussed in Appendix~\ref{App:dtime}. Here $N_E$ is the eigenvalue degeneracy, $2$ for $(N~\mathrm{mod}~8)\neq 0$ and $1$ for $(N~\mathrm{mod}~8)= 0$. As explained in the main text, the shape of the ramp and the plateau depends on the symmetry class, and the agreements with the counterparts in the RMT with GUE, GOE, and GSE are good. The numbers of samples are 1,000,000 ($N=16$), 600,000 ($N=18$), 240,000 ($N=20$), 120,000 ($N=22$), 48,000 ($N=24$), 10,000 ($N=26$), 3,000 ($N=28$), 1,000 ($N=30$), 516 ($N=32$), 90 ($N=34$).</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">15366</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gt_mm4SYK_Nm16-34W90b1.png</subfield>
+    <subfield code="y">00004 SYK $g(t, \beta)$ with $\beta=0,1,5$ and various $N$ values. The value at late times, which is equal to plateau height $g_p$, matches with $N_E Z(2\beta)/Z(\beta)^2$ as discussed in Appendix~\ref{App:dtime}. Here $N_E$ is the eigenvalue degeneracy, $2$ for $(N~\mathrm{mod}~8)\neq 0$ and $1$ for $(N~\mathrm{mod}~8)= 0$. As explained in the main text, the shape of the ramp and the plateau depends on the symmetry class, and the agreements with the counterparts in the RMT with GUE, GOE, and GSE are good. The numbers of samples are 1,000,000 ($N=16$), 600,000 ($N=18$), 240,000 ($N=20$), 120,000 ($N=22$), 48,000 ($N=24$), 10,000 ($N=26$), 3,000 ($N=28$), 1,000 ($N=30$), 516 ($N=32$), 90 ($N=34$).</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">15486</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/maj-nearest-neighbor-with-exact-rmt-0-4.png</subfield>
+    <subfield code="y">00002 Unfolded nearest-neighbor level spacing distribution for SYK vs. RMT. Here $s$ is measured in units of the mean spacing. Semi-analytical exact large $L$ results (correcting the Wigner surmise) for the RMT $P(s)$ are available \cite{mehta1960statistical,gaudin1961loi}, but we computed the RMT curves from $L = 12870$ exact diagonalization data.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">1858679</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-ggcgdt_mm4SYK_Nm16-34.png</subfield>
+    <subfield code="y">00015 Plots of $g(t)$, $g_c(t)$, and $g_d(t)$ for $N=16, 18, \ldots, 34$ and $\beta = 0, 1, 5$, from top to bottom. The noisy part of the curves for $g_d$ are due to the finite number of samples. We expect the true disorder average to continue decreasing rapidly.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">19059</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gt_mm4SYK_Nm16-34W90b0.png</subfield>
+    <subfield code="y">00003 SYK $g(t, \beta)$ with $\beta=0,1,5$ and various $N$ values. The value at late times, which is equal to plateau height $g_p$, matches with $N_E Z(2\beta)/Z(\beta)^2$ as discussed in Appendix~\ref{App:dtime}. Here $N_E$ is the eigenvalue degeneracy, $2$ for $(N~\mathrm{mod}~8)\neq 0$ and $1$ for $(N~\mathrm{mod}~8)= 0$. As explained in the main text, the shape of the ramp and the plateau depends on the symmetry class, and the agreements with the counterparts in the RMT with GUE, GOE, and GSE are good. The numbers of samples are 1,000,000 ($N=16$), 600,000 ($N=18$), 240,000 ($N=20$), 120,000 ($N=22$), 48,000 ($N=24$), 10,000 ($N=26$), 3,000 ($N=28$), 1,000 ($N=30$), 516 ($N=32$), 90 ($N=34$).</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">1963</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/tdip_gf_mm4SYK_Nm10-34.png</subfield>
+    <subfield code="y">00016 Left: The dip time $t_\mathrm{d}$ against $N$, for $\beta=0,1,5$. The lower and upper limits of the error bar indicate the range of data points with $g(t) &amp;lt; 1.04~g_\mathrm{min}$. Middle: Comparison of fits of the SYK $t_\mathrm{d}$ with exponential and power-law functions of $N$ for $\beta = 5$. Right: Plot of the plateau time $t_p$ against $N$, for $\beta = 0,1,5$.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">20831</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/sp_Nm10-34_Normalized.png</subfield>
+    <subfield code="y">00021 Normalized density of states $\tilde{\rho}(E)$ for the SYK model with $N=10, 12, \ldots, 34$. The bin width is $10^{-3}J$. Notice that the energy is measured in units of $N J$. The numbers of samples are $21 600 000$ ($N=10$), $10 800 000$ ($N=12$), $5 400 000$ ($N=14$), $1 200 000$ ($N=16$), 600 000 ($N=18$), 240 000 ($N=20$), 120 000 ($N=22$), 48 000 ($N=24$), 10 000 ($N=26$), 3~000 ($N=28$), 1 000 ($N=30$), 516 ($N=32$), 90 ($N=34$).</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">21128</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/q=4.png</subfield>
+    <subfield code="y">00014 At left we show the $q = 2$ standard saddle (blue/solid) and a subleading saddle with $n = 1$ flipped (red/dashed) and one with both $n = 2,6$ flipped (orange/dotted). At right we have the corresponding $q =4$ solutions. We use $\beta\mathcal{J} = 20\pi$.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">21217</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/majorana-entropy-vs-T.png</subfield>
+    <subfield code="y">00007 SYK thermodynamic $S(T)/N$, analyzed in the same way as Fig.~\ref{fig:majorana-energy-vs-T.pdf}.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">23822</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/majorana-energy-vs-T.png</subfield>
+    <subfield code="y">00006 Shown are SYK thermodynamic $\langle E(T) \rangle /N$ for different values of $N$, computed by exact diagonalization. We also plot the point-wise extrapolation obtained by fitting the eight values of $N$ to a three-tem expansion in $1/N$ and taking the leading term. This is almost indistinguishable from the exact large $N$ result obtained by solving the Schwinger-Dyson equations numerically.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">2624</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gt-rnd-K4096-W1200-b5.png</subfield>
+    <subfield code="y">00001 A log-log plot of $g(t; \beta=5)$ against time for GUE random matrices, dimension $L=2^{12}$. A dip, ramp and plateau structure similar to Fig.~\ref{fig:g-SYK} is apparent.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">2987</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gt_mm4SYK_Nm34W90b5.png</subfield>
+    <subfield code="y">00000 A log-log plot of SYK $g(t; \beta=5)$, plotted against time for $N=34$. Here we use the dimensionless combination $tJ$ for time. Initially the value drops quickly, through a region we call the \textit{slope}, to a minimum, which we call the \textit{dip}. After that the value increases roughly linearly, $\sim t$, until it smoothly connects to a plateau around $tJ = 3\times 10^4$. We call this increase the \textit{ramp}, and the time at which the extrapolated linear fit of the ramp in the log-log plot crosses the fitted plateau level the \textit{plateau time}. The data was taken using $90$ independent samples, and the disorder average was taken for the numerator and denominator separately.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">3059</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/fgtdip-N-mm4SYK_Nm10-34-b5-exppow.png</subfield>
+    <subfield code="y">00017 Left: The dip time $t_\mathrm{d}$ against $N$, for $\beta=0,1,5$. The lower and upper limits of the error bar indicate the range of data points with $g(t) &amp;lt; 1.04~g_\mathrm{min}$. Middle: Comparison of fits of the SYK $t_\mathrm{d}$ with exponential and power-law functions of $N$ for $\beta = 5$. Right: Plot of the plateau time $t_p$ against $N$, for $\beta = 0,1,5$.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">3491</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-2pt-N18_26-b0.png</subfield>
+    <subfield code="y">00009 SYK two-point function \eqref{G} for $N = 18, 26$, plotted for $\beta=0,5$. A slope, dip, ramp, and plateau can be seen.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">3576</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-2pt-N18_26-b5.png</subfield>
+    <subfield code="y">00010 SYK two-point function \eqref{G} for $N = 18, 26$, plotted for $\beta=0,5$. A slope, dip, ramp, and plateau can be seen.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">6338</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/largeNvsexact.png</subfield>
+    <subfield code="y">00008 Comparision of (\ref{ZZbargeneral}) evaluated for the SYK model using the large $N$ density of states extrapolated to $N = 34$ plus the Schwarzian partition function (red/dashed) against the $N = 34$ exact diagonalization answer for $g(t)$ (blue/solid). The discrepancies in the ramp and plateau regions are due to the fact that the large $N$ free energy (without a proper one-loop term) gets the partition function wrong by an order one factor. In the ramp we are dividing by this twice, and in the plateau we are roughly dividing by it once.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">8565</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-gp_N_Z2b_Zb_beta015.png</subfield>
+    <subfield code="y">00020 Left: Plot of the plateau height against $\beta$ for $N=10,12,\ldots,34$. Right: Plot of the plateau height and $Z(2\beta)/Z(\beta)^2$ for $\beta=0,5$ against $N$. A clear mod--8 pattern can be seen. For $N\equiv0\ (\mathrm{mod}~8)$, $g_c(\beta)$ equals $Z(2\beta) / Z(\beta)^2$, which for $\beta=0$ equals $1/Z(\beta=0) = 2^{-N/2}$, otherwise $g_c(\beta) = 2 Z(2\beta) / Z(\beta)^2$ due to the degeneracy in the eigenvalue of the SYK Hamiltonian.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">9899</subfield>
+    <subfield code="u">http://inspirehep.net/record/1498126/files/f-2pt-b5.png</subfield>
+    <subfield code="y">00011 SYK two-point function $G(t)$ for $N = 14, 16, 18$ (left) and $N = 20, 22, 24$ (right), $\beta=5$. The number of samples is $10^4$ for $14\leq N\leq 18$, $10^3$ for $N=20$, and $10^2$ for $N=22, 24$. A ramp appears for $N~\mathrm{mod}~8= 2, 6$ but not for $N~\mathrm{mod}~8= 0, 4$. A non-zero plateau appears only for $N~\mathrm{mod}~8 = 2$. These properties are all explained by the $(N~\mathrm{mod}~8)$ symmetry pattern.</subfield>
+  </datafield>
+  <datafield tag="909" ind1="C" ind2="O">
+    <subfield code="o">oai:inspirehep.net:1498126</subfield>
+    <subfield code="p">INSPIRE:HEP</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">CORE</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">arXiv</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">Citeable</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">HEP</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="6">
+    <subfield code="a">0-0-1-1-0-0-0</subfield>
+    <subfield code="t">2017-02-09 02:49:55</subfield>
+    <subfield code="v">Invenio/1.1.2.1260-aa76f refextract/1.5.44</subfield>
+    <subfield code="v">content.pdf;2</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">558359</subfield>
+    <subfield code="h">J. M. Maldacena</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">1</subfield>
+    <subfield code="r">hep-th/0106112</subfield>
+    <subfield code="s">JHEP,0304,021</subfield>
+    <subfield code="t">Eternal black holes in anti-de Sitter</subfield>
+    <subfield code="y">2003</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">583344</subfield>
+    <subfield code="h">L. Dyson, J. Lindesay, and L. Susskind</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">2</subfield>
+    <subfield code="r">hep-th/0202163</subfield>
+    <subfield code="s">JHEP,0208,045</subfield>
+    <subfield code="t">Is there really a de Sitter/CFT duality?</subfield>
+    <subfield code="y">2002</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">506964</subfield>
+    <subfield code="h">G. T. Horowitz and V. E. Hubeny</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">3</subfield>
+    <subfield code="r">hep-th/9909056</subfield>
+    <subfield code="s">Phys.Rev.,D62,024027</subfield>
+    <subfield code="t">Quasinormal modes of AdS black holes and the approach to thermal equilibrium</subfield>
+    <subfield code="y">2000</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1346251</subfield>
+    <subfield code="h">K. Papadodimas and S. Raju</subfield>
+    <subfield code="o">4</subfield>
+    <subfield code="r">arXiv:1502.06692 [hep-th]</subfield>
+    <subfield code="s">Phys.Rev.Lett.,115,211601</subfield>
+    <subfield code="t">Local Operators in the Eternal Black Hole</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">591849</subfield>
+    <subfield code="h">L. Dyson, M. Kleban, and L. Susskind</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">5</subfield>
+    <subfield code="r">hep-th/0208013</subfield>
+    <subfield code="s">JHEP,0210,011</subfield>
+    <subfield code="t">Disturbing implications of a cosmological constant</subfield>
+    <subfield code="y">2002</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">342314</subfield>
+    <subfield code="h">S. Sachdev</subfield>
+    <subfield code="m">and J.-w. Ye arXiv: [cond-mat]</subfield>
+    <subfield code="o">6</subfield>
+    <subfield code="r">cond-mat/9212030</subfield>
+    <subfield code="s">Phys.Rev.Lett.,70,3339</subfield>
+    <subfield code="t">Gapless spin fluid ground state in a random, quantum Heisenberg magnet</subfield>
+    <subfield code="y">1993</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Kitaev</subfield>
+    <subfield code="m">Talks at KITP, April 7,and May 27</subfield>
+    <subfield code="o">7</subfield>
+    <subfield code="t">A simple model of quantum holography.</subfield>
+    <subfield code="u">http://online.kitp.ucsb.edu/online/entangled15/kitaev/</subfield>
+    <subfield code="u">http://online.kitp.ucsb.edu/online/entangled15/kitaev2/</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1498121</subfield>
+    <subfield code="h">E. Dyer and G. Gur-Ari</subfield>
+    <subfield code="o">8</subfield>
+    <subfield code="r">arXiv:1611.04592 [hep-th]</subfield>
+    <subfield code="t">2D CFT Partition Functions at Late Times</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">625468</subfield>
+    <subfield code="h">J. L. F. Barbon and E. Rabinovici</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">9</subfield>
+    <subfield code="r">hep-th/0308063</subfield>
+    <subfield code="s">JHEP,0311,047</subfield>
+    <subfield code="t">Very long time scales and black hole thermal equilibrium</subfield>
+    <subfield code="y">2003</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1436511</subfield>
+    <subfield code="h">A. L. Fitzpatrick, J. Kaplan, D. Li, and J. Wang</subfield>
+    <subfield code="o">10</subfield>
+    <subfield code="r">arXiv:1603.08925 [hep-th]</subfield>
+    <subfield code="s">JHEP,1605,109</subfield>
+    <subfield code="t">On information loss in AdS3/CFT2</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1487926</subfield>
+    <subfield code="h">A. L. Fitzpatrick and J. Kaplan</subfield>
+    <subfield code="o">11</subfield>
+    <subfield code="r">arXiv:1609.07153 [hep-th]</subfield>
+    <subfield code="t">On the Late-Time Behavior of Virasoro Blocks and a Classification of Semiclassical Saddles</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Kitaev</subfield>
+    <subfield code="m">KITP seminar, Feb. 12</subfield>
+    <subfield code="o">12</subfield>
+    <subfield code="u">http://online.kitp.ucsb.edu/online/joint98/kitaev/</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1416867</subfield>
+    <subfield code="h">J. Polchinski and V. Rosenhaus</subfield>
+    <subfield code="o">13</subfield>
+    <subfield code="r">arXiv:1601.06768 [hep-th]</subfield>
+    <subfield code="s">JHEP,1604,001</subfield>
+    <subfield code="t">The Spectrum in the Sachdev-Ye-Kitaev Model</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1452588</subfield>
+    <subfield code="h">J. Maldacena and D. Stanford</subfield>
+    <subfield code="o">14</subfield>
+    <subfield code="r">arXiv:1604.07818 [hep-th]</subfield>
+    <subfield code="s">Phys.Rev.,D94,106002</subfield>
+    <subfield code="t">Remarks on the Sachdev-Ye-Kitaev model</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1347290</subfield>
+    <subfield code="h">J. Maldacena, S. H. Shenker, and D. Stanford</subfield>
+    <subfield code="o">15</subfield>
+    <subfield code="r">arXiv:1503.01409 [hep-th]</subfield>
+    <subfield code="s">JHEP,1608,106</subfield>
+    <subfield code="t">A bound on chaos</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1236835</subfield>
+    <subfield code="h">S. H. Shenker and D. Stanford</subfield>
+    <subfield code="o">16</subfield>
+    <subfield code="r">arXiv:1306.0622 [hep-th]</subfield>
+    <subfield code="s">JHEP,1403,067</subfield>
+    <subfield code="t">Black holes and the butterfly effect</subfield>
+    <subfield code="y">2014</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Kitaev</subfield>
+    <subfield code="m">Talk given at the Fundamental Physics Prize Symposium, Nov. 10</subfield>
+    <subfield code="o">17</subfield>
+    <subfield code="u">https://www.youtube.com/watch?v=OQ9qN8j7EZI</subfield>
+    <subfield code="y">2014</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1334998</subfield>
+    <subfield code="h">S. H. Shenker and D. Stanford</subfield>
+    <subfield code="o">18</subfield>
+    <subfield code="r">arXiv:1412.6087 [hep-th]</subfield>
+    <subfield code="s">JHEP,1505,132</subfield>
+    <subfield code="t">Stringy effects in scrambling</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1282634</subfield>
+    <subfield code="h">A. Almheiri and J. Polchinski</subfield>
+    <subfield code="o">19</subfield>
+    <subfield code="r">arXiv:1402.6334 [hep-th]</subfield>
+    <subfield code="s">JHEP,1511,014</subfield>
+    <subfield code="t">Models of AdS2 backreaction and holography</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1467447</subfield>
+    <subfield code="h">J. Maldacena, D. Stanford, and Z. Yang</subfield>
+    <subfield code="o">20</subfield>
+    <subfield code="r">arXiv:1606.01857 [hep-th]</subfield>
+    <subfield code="t">Conformal symmetry and its breaking in two dimensional Nearly Anti-de-Sitter space</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1462288</subfield>
+    <subfield code="h">K. Jensen</subfield>
+    <subfield code="o">21</subfield>
+    <subfield code="r">arXiv:1605.06098 [hep-th]</subfield>
+    <subfield code="s">Phys.Rev.Lett.,117,111601</subfield>
+    <subfield code="t">Chaos in AdS2 Holography</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1468666</subfield>
+    <subfield code="h">J. Engelsy, T. G. Mertens, and H. Verlinde</subfield>
+    <subfield code="o">22</subfield>
+    <subfield code="r">arXiv:1606.03438 [hep-th]</subfield>
+    <subfield code="s">JHEP,1607,139</subfield>
+    <subfield code="t">An investigation of AdS2 backreaction and holography</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1488146</subfield>
+    <subfield code="h">Y. Gu, X.-L. Qi, and D. Stanford</subfield>
+    <subfield code="o">23</subfield>
+    <subfield code="r">arXiv:1609.07832 [hep-th]</subfield>
+    <subfield code="t">Local criticality, diffusion and chaos in generalized Sachdev-Ye-Kitaev models</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1490932</subfield>
+    <subfield code="h">M. Berkooz, P. Narayan, M. Rozali, and J. Simn</subfield>
+    <subfield code="o">24</subfield>
+    <subfield code="r">arXiv:1610.02422 [hep-th]</subfield>
+    <subfield code="t">Higher Dimensional Generalizations of the SYK Model</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1494854</subfield>
+    <subfield code="h">W. Fu, D. Gaiotto, J. Maldacena, and S. Sachdev</subfield>
+    <subfield code="o">25</subfield>
+    <subfield code="r">arXiv:1610.08917 [hep-th]</subfield>
+    <subfield code="t">Supersymmetric SYK models</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1489665</subfield>
+    <subfield code="h">D. J. Gross and V. Rosenhaus</subfield>
+    <subfield code="o">26</subfield>
+    <subfield code="r">arXiv:1610.01569 [hep-th]</subfield>
+    <subfield code="t">A Generalization of Sachdev-Ye-Kitaev</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1430931</subfield>
+    <subfield code="h">A. Jevicki, K. Suzuki, and J. Yoon</subfield>
+    <subfield code="o">27</subfield>
+    <subfield code="r">arXiv:1603.06246 [hep-th]</subfield>
+    <subfield code="s">JHEP,1607,007</subfield>
+    <subfield code="t">Bi-Local Holography in the SYK Model</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1469260</subfield>
+    <subfield code="h">A. Almheiri and B. Kang</subfield>
+    <subfield code="o">28</subfield>
+    <subfield code="r">arXiv:1606.04108 [hep-th]</subfield>
+    <subfield code="s">JHEP,1610,052</subfield>
+    <subfield code="t">Conformal Symmetry Breaking and Thermodynamics of Near-Extremal Black Holes</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1473712</subfield>
+    <subfield code="h">D. Bagrets, A. Altland, and A. Kamenev</subfield>
+    <subfield code="o">29</subfield>
+    <subfield code="r">arXiv:1607.00694 [cond-mat.str-el]</subfield>
+    <subfield code="s">Nucl.Phys.,B911,191-205</subfield>
+    <subfield code="t">Sachdev-Ye-Kitaev model as Liouville quantum mechanics</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1483183</subfield>
+    <subfield code="h">M. Cvetic and I. Papadimitriou</subfield>
+    <subfield code="o">30</subfield>
+    <subfield code="r">arXiv:1608.07018 [hep-th]</subfield>
+    <subfield code="s">JHEP,1612,008</subfield>
+    <subfield code="t">AdS2 holographic dictionary</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1429681</subfield>
+    <subfield code="h">W. Fu and S. Sachdev</subfield>
+    <subfield code="o">31</subfield>
+    <subfield code="r">arXiv:1603.05246 [cond-mat.str-el]</subfield>
+    <subfield code="s">Phys.Rev.,B94,035135</subfield>
+    <subfield code="t">Numerical study of fermion and boson models with infinite-range random interactions</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1423181</subfield>
+    <subfield code="h">Y.-Z. You, A. W. W. Ludwig, and C. Xu</subfield>
+    <subfield code="o">32</subfield>
+    <subfield code="r">arXiv:1602.06964 [cond-mat.str-el]</subfield>
+    <subfield code="t">Sachdev-Ye-Kitaev Model and Thermalization on the Boundary of Many-Body Localized Fermionic Symmetry Protected Topological States</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1491407</subfield>
+    <subfield code="h">A. M. García-García and J. J. M. Verbaarschot</subfield>
+    <subfield code="o">33</subfield>
+    <subfield code="r">arXiv:1610.03816 [hep-th]</subfield>
+    <subfield code="t">Spectral and thermodynamic properties of the Sachdev-Ye-Kitaev model</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1292128</subfield>
+    <subfield code="h">V. Balasubramanian, M. Berkooz, S. F. Ross, and J. Simon</subfield>
+    <subfield code="o">34</subfield>
+    <subfield code="r">arXiv:1404.6198 [hep-th]</subfield>
+    <subfield code="s">Class.Quant.Grav.,31,185009</subfield>
+    <subfield code="t">Black Holes, Entanglement and Random Matrices</subfield>
+    <subfield code="y">2014</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1492351</subfield>
+    <subfield code="h">D. A. Roberts and B. Yoshida</subfield>
+    <subfield code="o">35</subfield>
+    <subfield code="r">arXiv:1610.04903 [quant-ph]</subfield>
+    <subfield code="t">Chaos and complexity by design</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">M. L. Mehta</subfield>
+    <subfield code="m">Random matrices, vol. 142 press</subfield>
+    <subfield code="o">36</subfield>
+    <subfield code="p">Academic</subfield>
+    <subfield code="y">2004</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">194389</subfield>
+    <subfield code="h">C. Teitelboim</subfield>
+    <subfield code="o">37</subfield>
+    <subfield code="s">Phys.Lett.,B126,41-45</subfield>
+    <subfield code="t">Gravitation and Hamiltonian Structure in Two Space-Time Dimensions</subfield>
+    <subfield code="y">1983</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">204694</subfield>
+    <subfield code="h">R. Jackiw</subfield>
+    <subfield code="o">38</subfield>
+    <subfield code="s">Nucl.Phys.,B252,343-356</subfield>
+    <subfield code="y">1985</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">269097</subfield>
+    <subfield code="o">38</subfield>
+    <subfield code="t">LOWER DIMENSIONAL GRAVITY</subfield>
+    <subfield code="y">1988</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="a">doi:10.1103/PhysRevB.83.075103</subfield>
+    <subfield code="h">L. Fidkowski and A. Kitaev</subfield>
+    <subfield code="o">39</subfield>
+    <subfield code="s">Phys.Rev.,B83,075103</subfield>
+    <subfield code="t">Topological phases of fermions in one dimension</subfield>
+    <subfield code="u">http://link.aps.org/doi/</subfield>
+    <subfield code="y">2011</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">42424</subfield>
+    <subfield code="h">F. J. Dyson</subfield>
+    <subfield code="o">40</subfield>
+    <subfield code="s">J.Math.Phys.,3,140-156</subfield>
+    <subfield code="t">Statistical theory of the energy levels of complex systems. I</subfield>
+    <subfield code="y">1962</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">447863</subfield>
+    <subfield code="h">T. Guhr, A. Muller-Groeling, and H. A. Weidenmuller</subfield>
+    <subfield code="m">arXiv: [cond-mat]</subfield>
+    <subfield code="o">41</subfield>
+    <subfield code="r">cond-mat/9707301</subfield>
+    <subfield code="s">Phys.Rept.,299,189-425</subfield>
+    <subfield code="t">Random matrix theories in quantum physics: Common concepts</subfield>
+    <subfield code="y">1998</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">E. Wigner</subfield>
+    <subfield code="o">42</subfield>
+    <subfield code="t">Proceedings of the conference on neutron physics by time-of-flight, gatlinburg, tennessee, 1956</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">O. Bohigas and M.-J. Giannoni</subfield>
+    <subfield code="m">in Mathematical and computational methods in nuclear physics, pp. 1-99</subfield>
+    <subfield code="o">43</subfield>
+    <subfield code="p">Springer</subfield>
+    <subfield code="t">Chaotic motion and random matrix theories</subfield>
+    <subfield code="y">1984</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">M. L. Mehta</subfield>
+    <subfield code="o">44</subfield>
+    <subfield code="s">Nucl.Phys.,18,395-419</subfield>
+    <subfield code="t">On the statistical properties of the level-spacings in nuclear spectra</subfield>
+    <subfield code="y">1960</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">M. Gaudin</subfield>
+    <subfield code="o">45</subfield>
+    <subfield code="s">Nucl.Phys.,25,447-458</subfield>
+    <subfield code="t">Sur la loi limite de l’espacement des valeurs propres d’une matrice alé atoire</subfield>
+    <subfield code="y">1961</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1376470</subfield>
+    <subfield code="h">S. Sachdev</subfield>
+    <subfield code="o">46</subfield>
+    <subfield code="r">arXiv:1506.05111 [hep-th]</subfield>
+    <subfield code="s">Phys.Rev.,X5,041025</subfield>
+    <subfield code="t">Bekenstein-Hawking Entropy and Strange Metals</subfield>
+    <subfield code="y">2015</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">O. Parcollet and A. Georges</subfield>
+    <subfield code="o">47</subfield>
+    <subfield code="s">Phys.Rev.,B59,5341</subfield>
+    <subfield code="t">Non-fermi-liquid regime of a doped mott insulator</subfield>
+    <subfield code="y">1999</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="a">doi:10.1103/PhysRevB.63.134406</subfield>
+    <subfield code="h">A. Georges, O. Parcollet, and S. Sachdev</subfield>
+    <subfield code="o">48</subfield>
+    <subfield code="s">Phys.Rev.,B63,134406</subfield>
+    <subfield code="t">Quantum fluctuations of a nearly critical heisenberg spin glass</subfield>
+    <subfield code="u">http://link.aps.org/doi/</subfield>
+    <subfield code="y">2001</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">J. Polchinski and A. Streicher</subfield>
+    <subfield code="m">Unpublished</subfield>
+    <subfield code="o">49</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">F. J. Dyson</subfield>
+    <subfield code="o">50</subfield>
+    <subfield code="s">J.Math.Phys.,3,166-175</subfield>
+    <subfield code="t">Statistical theory of the energy levels of complex systems. III</subfield>
+    <subfield code="y">1962</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">E. Brézin and S. Hikami</subfield>
+    <subfield code="o">51</subfield>
+    <subfield code="r">cond-mat/9608116</subfield>
+    <subfield code="s">Phys.Rev.,E55,4067-4083</subfield>
+    <subfield code="t">Spectral form factor in a random matrix theory</subfield>
+    <subfield code="y">1997</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">465723</subfield>
+    <subfield code="h">E. Brezin and S. Hikami</subfield>
+    <subfield code="o">52</subfield>
+    <subfield code="s">Phys.Rev.,E56,264-269</subfield>
+    <subfield code="t">Extension of level-spacing universality</subfield>
+    <subfield code="y">1997</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">B. Altshuler and B. Shklovskii</subfield>
+    <subfield code="o">53</subfield>
+    <subfield code="s">Sov.Phys.JETP,64,127-135</subfield>
+    <subfield code="t">Repulsion of energy levels and conductivity of small metal samples</subfield>
+    <subfield code="y">1986</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">353654</subfield>
+    <subfield code="h">E. Brezin and A. Zee</subfield>
+    <subfield code="o">54</subfield>
+    <subfield code="s">Nucl.Phys.,B402,613-627</subfield>
+    <subfield code="t">Universality of the correlations between eigenvalues of large random matrices</subfield>
+    <subfield code="y">1993</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Andreev and B. Altshuler</subfield>
+    <subfield code="o">55</subfield>
+    <subfield code="s">Phys.Rev.Lett.,75,902</subfield>
+    <subfield code="t">Spectral statistics beyond random matrix theory</subfield>
+    <subfield code="y">1995</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Kamenev and M. Mézard</subfield>
+    <subfield code="o">56</subfield>
+    <subfield code="r">cond-mat/9901110</subfield>
+    <subfield code="s">J.Phys.,A32,4373-4388</subfield>
+    <subfield code="t">Wigner-Dyson statistics from the replica method</subfield>
+    <subfield code="y">1999</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">D. Stanford and E. Witten</subfield>
+    <subfield code="m">To appear</subfield>
+    <subfield code="o">57</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="m">L. Erd˝os and D. Schröder Mathematical Physics, Analysis and Geometry 17  9164</subfield>
+    <subfield code="o">58</subfield>
+    <subfield code="r">arXiv:1407.1552</subfield>
+    <subfield code="t">Phase transition in the density of states of quantum spin glasses</subfield>
+    <subfield code="y">2014</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">793175</subfield>
+    <subfield code="h">Y. Sekino and L. Susskind</subfield>
+    <subfield code="o">59</subfield>
+    <subfield code="r">arXiv:0808.2096 [hep-th]</subfield>
+    <subfield code="s">JHEP,0810,065</subfield>
+    <subfield code="t">Fast Scramblers</subfield>
+    <subfield code="y">2008</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">759404</subfield>
+    <subfield code="h">P. Hayden and J. Preskill</subfield>
+    <subfield code="o">60</subfield>
+    <subfield code="r">arXiv:0708.4025 [hep-th]</subfield>
+    <subfield code="s">JHEP,0709,120</subfield>
+    <subfield code="t">Black holes as mirrors: Quantum information in random subsystems</subfield>
+    <subfield code="y">2007</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">963413</subfield>
+    <subfield code="h">N. Lashkari, D. Stanford, M. Hastings, T. Osborne, and P. Hayden</subfield>
+    <subfield code="o">61</subfield>
+    <subfield code="r">arXiv:1111.6580 [hep-th]</subfield>
+    <subfield code="s">JHEP,1304,022</subfield>
+    <subfield code="t">Towards the Fast Scrambling Conjecture</subfield>
+    <subfield code="y">2013</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">A. Kitaev</subfield>
+    <subfield code="m">Private communication</subfield>
+    <subfield code="o">62</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="m">J</subfield>
+    <subfield code="o">63</subfield>
+    <subfield code="p">Deutsch</subfield>
+    <subfield code="s">Phys.Rev.,A43,2046</subfield>
+    <subfield code="t">Quantum statistical mechanics in a closed system</subfield>
+    <subfield code="y">1991</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">M. Srednicki</subfield>
+    <subfield code="o">64</subfield>
+    <subfield code="s">Phys.Rev.,E50,888</subfield>
+    <subfield code="t">Chaos and quantum thermalization</subfield>
+    <subfield code="y">1994</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">R. Prange</subfield>
+    <subfield code="o">65</subfield>
+    <subfield code="s">Phys.Rev.Lett.,78,2280</subfield>
+    <subfield code="t">The spectral form factor is not self-averaging</subfield>
+    <subfield code="y">1997</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1495302</subfield>
+    <subfield code="h">E. Witten</subfield>
+    <subfield code="o">66</subfield>
+    <subfield code="r">arXiv:1610.09758 [hep-th]</subfield>
+    <subfield code="t">An SYK-Like Model Without Disorder</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">497424</subfield>
+    <subfield code="h">R. Emparan, C. V. Johnson, and R. C. Myers</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">67</subfield>
+    <subfield code="r">hep-th/9903238</subfield>
+    <subfield code="s">Phys.Rev.,D60,104001</subfield>
+    <subfield code="t">Surface terms as counterterms in the AdS / CFT correspondence</subfield>
+    <subfield code="y">1999</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1459259</subfield>
+    <subfield code="h">O. J. Dias, J. E. Santos, and B. Way</subfield>
+    <subfield code="o">68</subfield>
+    <subfield code="s">Phys.Rev.Lett.,117,151101</subfield>
+    <subfield code="t">Localized AdS5×S5 Black Holes</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">36167</subfield>
+    <subfield code="h">L. Susskind</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">69</subfield>
+    <subfield code="r">hep-th/9309145</subfield>
+    <subfield code="t">Some speculations about black hole entropy in string theory</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">508371</subfield>
+    <subfield code="h">G. T. Horowitz</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">70</subfield>
+    <subfield code="r">hep-th/9910082</subfield>
+    <subfield code="s">Class.Quant.Grav.,17,1107-1116</subfield>
+    <subfield code="t">Comments on black holes in string theory</subfield>
+    <subfield code="y">2000</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">427427</subfield>
+    <subfield code="h">G. T. Horowitz and J. Polchinski</subfield>
+    <subfield code="m">arXiv: [hep-th]</subfield>
+    <subfield code="o">71</subfield>
+    <subfield code="r">hep-th/9612146</subfield>
+    <subfield code="s">Phys.Rev.,D55,6189-6197</subfield>
+    <subfield code="t">A Correspondence principle for black holes and strings</subfield>
+    <subfield code="y">1997</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">G. Rodgers and A. Bray</subfield>
+    <subfield code="o">72</subfield>
+    <subfield code="s">Phys.Rev.,B37,3557</subfield>
+    <subfield code="t">Density of states of a sparse random matrix</subfield>
+    <subfield code="y">1988</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">J. P. Keating, N. Linden, and H. J. Wells</subfield>
+    <subfield code="o">73</subfield>
+    <subfield code="r">arXiv:1403.1114 [math-ph]</subfield>
+    <subfield code="s">Markov Process.Related Fields,21,537-555</subfield>
+    <subfield code="t">Random matrices and quantum spin chains</subfield>
+    <subfield code="y">2014</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="m">L. Erd˝os and H.-T. Yau</subfield>
+    <subfield code="o">74</subfield>
+    <subfield code="r">arXiv:1106.4986</subfield>
+    <subfield code="s">Bull.Am.Math.Soc.,49,377-414</subfield>
+    <subfield code="t">Universality of local spectral statistics of random matrices</subfield>
+    <subfield code="y">2012</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">176398</subfield>
+    <subfield code="h">F. D. M. Haldane</subfield>
+    <subfield code="o">75</subfield>
+    <subfield code="s">Phys.Lett.,A93,464-468</subfield>
+    <subfield code="t">Continuum dynamics of the 1-D Heisenberg antiferromagnet: Identification with the O(3) nonlinear sigma model</subfield>
+    <subfield code="y">1983</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="h">M. E. Ismail, D. Stanton, and G. Viennot</subfield>
+    <subfield code="o">76</subfield>
+    <subfield code="s">Eur.J.Combinatorics,8,379-392</subfield>
+    <subfield code="t">The combinatorics of q-hermite polynomials and the askey wilson integral</subfield>
+    <subfield code="y">1987</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1388892</subfield>
+    <subfield code="h">J. M. Magan</subfield>
+    <subfield code="o">77</subfield>
+    <subfield code="r">arXiv:1508.05339 [quant-ph]</subfield>
+    <subfield code="s">Phys.Rev.Lett.,116,030401</subfield>
+    <subfield code="t">Random free fermions: An analytical example of eigenstate thermalization</subfield>
+    <subfield code="y">2016</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">1425585</subfield>
+    <subfield code="h">D. Anninos, T. Anous, and F. Denef</subfield>
+    <subfield code="o">78</subfield>
+    <subfield code="r">arXiv:1603.00453 [hep-th]</subfield>
+    <subfield code="t">Disordered Quivers and Cold Horizons</subfield>
+  </datafield>
+  <datafield tag="999" ind1="C" ind2="5">
+    <subfield code="0">142681</subfield>
+    <subfield code="h">C. Itzykson and J. B. Zuber</subfield>
+    <subfield code="o">79</subfield>
+    <subfield code="s">J.Math.Phys.,21,411</subfield>
+    <subfield code="t">The Planar Approximation. 2.</subfield>
+    <subfield code="y">1980</subfield>
+  </datafield>
+</record>
+</collection>

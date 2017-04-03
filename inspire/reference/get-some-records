@@ -1,0 +1,2 @@
+#!/bin/zsh
+curl 'https://inspirehep.net/oai2d?verb=ListRecords&set=INSPIRE:HEP&metadataPrefix=marcxml&from=2017-01-01&until=2017-01-01' > some-records.xml

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://inspirehep.net/css/oai2.xsl.v1.0" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+<responseDate>2017-03-30T21:47:09Z</responseDate><request verb="Identify">http://inspirehep.net/oai2d</request><Identify>
+<repositoryName>HEP</repositoryName><baseURL>http://inspirehep.net/oai2d</baseURL><protocolVersion>2.0</protocolVersion><adminEmail>admin@inspirehep.net</adminEmail><earliestDatestamp>1934-10-31T23:00:00Z</earliestDatestamp><deletedRecord>persistent</deletedRecord><granularity>YYYY-MM-DDThh:mm:ssZ</granularity><description><oai-identifier xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier
+                                       http://www.openarchives.org/OAI/2.0/oai-identifier.xsd"><scheme>oai</scheme><repositoryIdentifier>inspirehep.net</repositoryIdentifier><delimiter>:</delimiter><sampleIdentifier>oai:inspirehep.net:123</sampleIdentifier></oai-identifier></description><description>
+<eprints xmlns="http://www.openarchives.org/OAI/1.1/eprints"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.openarchives.org/OAI/1.1/eprints
+http://www.openarchives.org/OAI/1.1/eprints.xsd">
+<content>
+<URL>http://inspirehep.net/</URL>
+</content>
+<metadataPolicy>
+<text>Free and unlimited use by anybody with obligation to refer to original record</text>
+</metadataPolicy>
+<dataPolicy>
+<text>Full content</text>
+</dataPolicy>
+<submissionPolicy>
+<text>Submission restricted. Submitted documents are subject of approval by OAI repository admins.</text>
+</submissionPolicy>
+</eprints>
+</description><description><friends xmlns="http://www.openarchives.org/OAI/2.0/friends/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/friends/
+      http://www.openarchives.org/OAI/2.0/friends.xsd"><baseURL>http://cds.cern.ch/oai2d</baseURL><baseURL>http://openaire.cern.ch/oai2d</baseURL><baseURL>http://export.arxiv.org/oai2</baseURL></friends></description></Identify>
+</OAI-PMH>
+
