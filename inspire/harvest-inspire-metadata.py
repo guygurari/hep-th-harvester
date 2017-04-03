@@ -14,7 +14,10 @@ metadata_prefix = "marcxml"
 data_set = "INSPIRE:HEP"
 earliest_datestamp = '1934-10-31' # from 'verb=Identify'
 db_filename = "inspire.sqlite"
-resumption_token_file = 'inspire-resumption-token.txt'
+
+working_state_dir = 'working-state'
+resumption_token_file = '%s/inspire-resumption-token.txt' % working_state_dir
+latest_marc_file = '%s/latest-marc.xml' % working_state_dir
 
 OAI = "{http://www.openarchives.org/OAI/2.0/}"
 MARC = "{http://www.loc.gov/MARC21/slim}"
@@ -245,7 +248,7 @@ def harvest(conn, cursor):
         xml = read_url(url)
 
         # Save XML for debugging purposes
-        f = open('latest-marc.xml', 'w')
+        f = open(latest_marc_file, 'w')
         f.write(xml)
         f.close()
 
@@ -298,13 +301,11 @@ def find_latest_start_date(cursor):
         print "Not found, starting at earliest datestamp."
         return earliest_datestamp
     else:
-        # Increase by one day to avoid re-downloading the papers from
-        # the last day
         start_date = start_date[0]
         start_date = re.sub(r'T.*', r'', start_date)
-        start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-        start_date = start_date + datetime.timedelta(days=1)
-        start_date = start_date.strftime("%Y-%m-%d")
+        #start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+        #start_date = start_date + datetime.timedelta(days=1)
+        #start_date = start_date.strftime("%Y-%m-%d")
         return start_date
 
 def main():
@@ -314,6 +315,9 @@ def main():
     if not os.path.isfile(db_filename):
         print "Database file %s does not exit" % db_filename
         exit(1)
+
+    if not os.path.isdir(working_state_dir):
+        os.mkdir(working_state_dir)
 
     parser = argparse.ArgumentParser(description="Harvest INSPIRE metadata")
     parser.add_argument('-n', '--dry-run',
