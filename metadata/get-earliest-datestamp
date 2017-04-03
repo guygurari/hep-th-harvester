@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl 'http://export.arxiv.org/oai2?verb=Identify' | grep earliest
