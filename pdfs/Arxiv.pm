@@ -4,7 +4,7 @@ use IO::File;
 use DBI;
 
 my $ghostscript = "$ENV{HOME}/gs/gs-921-linux-x86_64";
-my $dbfile = 'metadata/hep-th.sqlite';
+my $dbfile = '../hep-th.sqlite';
 #my $paper_ids;
 
 my $dbh = DBI->connect("dbi:SQLite:dbname=$dbfile","","") || die;
