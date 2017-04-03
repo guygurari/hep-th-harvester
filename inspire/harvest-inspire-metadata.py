@@ -59,6 +59,12 @@ def add_author(cursor, inspire_id, elem):
     cursor.execute('''INSERT INTO inspire_authors VALUES (?,?,?)''',
               (first_name.strip(), last_name.strip(), inspire_id))
                
+def find_publication_date(info):
+    """Find the publication date of the given record."""
+    return info.findtext(
+        MARC+'datafield[@tag="961"]/'+
+        MARC+'subfield[@code="x"]')
+    
 def add_record(cursor, record, dry_run=False):
     header = record.find(OAI+'header')
     status = header.get('status')
@@ -95,11 +101,7 @@ def add_record(cursor, record, dry_run=False):
         MARC+'datafield[@tag="024"]/'+
         MARC+'subfield[@code="a"]')
 
-    created = info.findtext(
-        MARC+'datafield[@tag="961"]/'+
-        MARC+'subfield[@code="x"]')
-    # created = datetime.datetime(
-    #     *(time.strptime(created_text, '%Y%m%d%H%M%S.0')[0:6]))
+    pub_date = find_publication_date(info)
 
     arxiv_id = None
     arxiv_category = None
@@ -122,7 +124,7 @@ def add_record(cursor, record, dry_run=False):
         return
         
     if dry_run:
-        print "%s : added : %s : '%s'" % (inspire_id, created, title)
+        print "%s : added : %s : '%s'" % (inspire_id, pub_date, title)
         return
     
     add_author(cursor, inspire_id, first_author)
@@ -142,9 +144,9 @@ def add_record(cursor, record, dry_run=False):
 
     cursor.execute('''INSERT INTO inspire_papers VALUES (?,?,?,?,?,?,?,?)''',
               (inspire_id, arxiv_id, arxiv_category,
-               title, datestamp, abstract, created, doi))
+               title, datestamp, abstract, pub_date, doi))
 
-    print "%s : added : %s : '%s'" % (inspire_id, created, title)
+    print "%s : added : %s : '%s'" % (inspire_id, pub_date, title)
 
 def harvest_xml(conn, cursor, root, dry_run=False):
     """

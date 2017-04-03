@@ -1,6 +1,6 @@
 CREATE TABLE inspire_papers
 	(id text, arxiv_id text, arxiv_category text, title text,
-	datestamp text, abstract text, created text, doi text);
+	datestamp text, abstract text, publication_date text, doi text);
 
 CREATE TABLE inspire_references
 	(id text, ref_id text);
