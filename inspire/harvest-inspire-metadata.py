@@ -61,22 +61,49 @@ def add_author(cursor, inspire_id, elem):
                
 def find_publication_date(info):
     """Find the publication date of the given record."""
-    return info.findtext(
-        MARC+'datafield[@tag="961"]/'+
-        MARC+'subfield[@code="x"]')
+    # Possible xpaths for relevant dates
+    # (publication date, thesis defense date, preprint date, ...)
+    date_xpaths = [
+        MARC+'datafield[@tag="961"]/'+MARC+'subfield[@code="x"]',
+        MARC+'datafield[@tag="502"]/'+MARC+'subfield[@code="d"]',
+        MARC+'datafield[@tag="269"]/'+MARC+'subfield[@code="c"]',
+        MARC+'datafield[@tag="260"]/'+MARC+'subfield[@code="c"]',
+        MARC+'datafield[@tag="773"]/'+MARC+'subfield[@code="d"]',
+        MARC+'datafield[@tag="773"]/'+MARC+'subfield[@code="y"]',
+        ]
+
+    for path in date_xpaths:
+        pub_date = info.findtext(path)
+        if pub_date != None:
+            return pub_date
+
+    return None
     
 def add_record(cursor, record, dry_run=False):
     header = record.find(OAI+'header')
-    status = header.get('status')
+    datestamp = None
 
-    if status != None and status == 'deleted':
-        print "skipping (deleted record)"
-        return
+    if header != None:
+        status = header.get('status')
+
+        if status != None and status == 'deleted':
+            print "skipping (deleted record)"
+            return
+
+        #oai_id = header.find(OAI+'identifier').text
+        datestamp = header.findtext(OAI+'datestamp')
     
-    meta = record.find(OAI+'metadata')
-    info = meta.find(MARC+"record")
+    # This shows up in OAI dumps of MARC XML
+    info = record.find(OAI+'metadata/'+MARC+'record')
 
-    inspire_id = info.findtext(MARC+'controlfield[@tag="001"]', default='')
+    if info == None:
+        # This shows up in single record MARC XML
+        info = record.find(MARC+"record")
+
+    if info == None:
+        raise ValueError("Cannot find <record> element")
+
+    inspire_id = info.findtext(MARC+'controlfield[@tag="001"]')
 
     if is_in_db(cursor, inspire_id):
         print "%s : skipping (already in database)" % inspire_id
@@ -93,9 +120,6 @@ def add_record(cursor, record, dry_run=False):
     elif title == 'withdrawn or canceled':
         print "%s : skipping (withdrawn or canceled)" % inspire_id
         return
-
-    oai_id = header.find(OAI+'identifier').text
-    datestamp = header.findtext(OAI+'datestamp')
 
     doi = info.findtext(
         MARC+'datafield[@tag="024"]/'+
@@ -187,16 +211,8 @@ def load_resumption_token():
     else:
         return None
 
-def harvest(conn, cursor):
-    resumption_token = load_resumption_token()
-
-    if resumption_token == None:
-        url = (base_harvesting_url +
-            "from=%s&metadataPrefix=%s&set=%s"
-            % (start_date, metadata_prefix, data_set))
-    else:
-        url = base_harvesting_url + "resumptionToken=%s" % resumption_token
-    
+def read_url(url):
+    """Read the text response from the given URL. Retry as needed."""
     while True:
         print "\n>>> fetching %s\n" % url
         try:
@@ -209,8 +225,24 @@ def harvest(conn, cursor):
                 continue
             else:
                 raise
-            
-        xml = response.read()
+
+        return response.read()
+
+def harvest(conn, cursor):
+    start_date = find_latest_start_date(cursor)
+    print "Harvesting (start date: %s)" % start_date
+
+    resumption_token = load_resumption_token()
+
+    if resumption_token == None:
+        url = (base_harvesting_url +
+            "from=%s&metadataPrefix=%s&set=%s"
+            % (start_date, metadata_prefix, data_set))
+    else:
+        url = base_harvesting_url + "resumptionToken=%s" % resumption_token
+    
+    while True:
+        xml = read_url(url)
 
         # Save XML for debugging purposes
         f = open('latest-marc.xml', 'w')
@@ -234,7 +266,28 @@ def harvest(conn, cursor):
         else:
             save_resumption_token(token.text)
             url = base_harvesting_url + "resumptionToken=%s" % (token.text)
-            
+
+def harvest_single_record(conn, cursor, record_id):
+    url = "https://inspirehep.net/record/%s?of=xm" % record_id
+    xml = read_url(url)
+    root = ET.fromstring(xml)
+    add_record(cursor, root)
+    conn.commit()
+
+def delete_record(conn, cursor, record_id):
+    if not is_in_db(cursor, record_id):
+        print "Record %s not found" % record_id
+        return
+        
+    print "Deleting record %s" % record_id
+    cursor.execute('''DELETE FROM inspire_papers WHERE id=?''',
+                   (record_id,))
+    cursor.execute('''DELETE FROM inspire_authors WHERE paper_id=?''',
+                   (record_id,))
+    cursor.execute('''DELETE FROM inspire_references WHERE id=?''',
+                   (record_id,))
+    conn.commit()
+    
 def find_latest_start_date(cursor):
     cursor.execute("SELECT MAX(datestamp) FROM inspire_papers")
     start_date = cursor.fetchone()
@@ -264,22 +317,37 @@ def main():
     parser.add_argument('-n', '--dry-run',
                         help='only print, don\'t store anything',
                         action='store_true')
-    parser.add_argument('-f', '--file',
+    parser.add_argument('--file',
                         help='read xml from given file instead of downloading'
                         )
+    parser.add_argument('-r', '--record',
+                        help='download a single record'
+                        )
+    parser.add_argument('-d', '--delete',
+                        help='delete a single record'
+                        )
+    parser.add_argument('--force',
+                        help='force re-download even if record exists',
+                        action='store_true')
     args = parser.parse_args()
 
     if args.dry_run and args.file == None:
         print "Dry run only possible with --file"
         exit(1)
 
-    start_date = find_latest_start_date(cursor)
-    print "Start date: %s" % start_date
-
-    if args.file == None:
-        harvest(conn, cursor)
-    else:
+    if args.file != None:
         harvest_from_file(conn, cursor, args.file, args.dry_run)
+    elif args.record != None:
+        if args.force and is_in_db(cursor, args.record):
+            delete_record(conn, cursor, args.record)
+        harvest_single_record(conn, cursor, args.record)
+    elif args.delete != None:
+        delete_record(conn, cursor, args.delete)
+    else:
+        harvest(conn, cursor)
+
+    # Commit before closing, just in case we forgot
+    conn.commit()
     conn.close()
     
 if __name__ == '__main__':
