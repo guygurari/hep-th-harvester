@@ -14,6 +14,7 @@ metadata_prefix = "marcxml"
 data_set = "INSPIRE:HEP"
 earliest_datestamp = '1934-10-31' # from 'verb=Identify'
 db_filename = "inspire.sqlite"
+resumption_token_file = 'inspire-resumption-token.txt'
 
 OAI = "{http://www.openarchives.org/OAI/2.0/}"
 MARC = "{http://www.loc.gov/MARC21/slim}"
@@ -30,9 +31,20 @@ def is_in_hep_theory(info):
             return True
 
     return False
-        
+
+def is_in_db(cursor, inspire_id):
+    """Is the given paper ID in the database?"""
+    cursor.execute("SELECT id FROM inspire_papers where id=%s"
+                   % inspire_id)
+    return cursor.fetchone() != None
+
 def add_author(cursor, inspire_id, elem):
     full_name = elem.findtext(MARC+'subfield[@code="a"]')
+
+    if full_name == None:
+        # Missing author name. This happens e.g. in proceedings.
+        return
+    
     # Sometimes there's more than one comma: "Callan, Curtis G., Jr."
     # So we don't just split the string.
     m = re.match(r"([^,]+),\s*(.*)", full_name)
@@ -47,7 +59,7 @@ def add_author(cursor, inspire_id, elem):
     cursor.execute('''INSERT INTO inspire_authors VALUES (?,?,?)''',
               (first_name.strip(), last_name.strip(), inspire_id))
                
-def add_record(cursor, record):
+def add_record(cursor, record, dry_run=False):
     header = record.find(OAI+'header')
     status = header.get('status')
 
@@ -59,6 +71,11 @@ def add_record(cursor, record):
     info = meta.find(MARC+"record")
 
     inspire_id = info.findtext(MARC+'controlfield[@tag="001"]', default='')
+
+    if is_in_db(cursor, inspire_id):
+        print "%s : skipping (already in database)" % inspire_id
+        return
+
     title = info.findtext(
         MARC+'datafield[@tag="245"]/'+
         MARC+'subfield[@code="a"]')
@@ -104,6 +121,10 @@ def add_record(cursor, record):
         print "%s : skipping (missing author)" % inspire_id
         return
         
+    if dry_run:
+        print "%s : added : %s : '%s'" % (inspire_id, created, title)
+        return
+    
     add_author(cursor, inspire_id, first_author)
 
     for author_elem in info.iterfind(MARC+'datafield[@tag="700"]'):
@@ -125,7 +146,7 @@ def add_record(cursor, record):
 
     print "%s : added : %s : '%s'" % (inspire_id, created, title)
 
-def harvest_xml(conn, cursor, root):
+def harvest_xml(conn, cursor, root, dry_run=False):
     """
     Harvest MARC records out of the given XML root.
     Return True if any records were found
@@ -136,19 +157,18 @@ def harvest_xml(conn, cursor, root):
         return False
 
     for record in all_records.findall(OAI+"record"):
-        add_record(cursor, record)
+        add_record(cursor, record, dry_run)
 
-    conn.commit()
+    if not dry_run:
+        conn.commit()
     return True
 
-def harvest_from_file(conn, cursor, filename):
+def harvest_from_file(conn, cursor, filename, dry_run):
     f = open(filename, 'r')
     xml = f.read()
     f.close()
     root = ET.fromstring(xml)
-    harvest_xml(conn, cursor, root)
-
-resumption_token_file = 'inspire-resumption-token.txt'
+    harvest_xml(conn, cursor, root, dry_run)
 
 def save_resumption_token(token):
     with open(resumption_token_file, 'w') as f:
@@ -225,12 +245,10 @@ def find_latest_start_date(cursor):
         # the last day
         start_date = start_date[0]
         start_date = re.sub(r'T.*', r'', start_date)
-        print start_date
         start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
         start_date = start_date + datetime.timedelta(days=1)
         start_date = start_date.strftime("%Y-%m-%d")
         return start_date
-
 
 def main():
     conn = sql.connect(db_filename)
@@ -240,11 +258,26 @@ def main():
         print "Database file %s does not exit" % db_filename
         exit(1)
 
+    parser = argparse.ArgumentParser(description="Harvest INSPIRE metadata")
+    parser.add_argument('-n', '--dry-run',
+                        help='only print, don\'t store anything',
+                        action='store_true')
+    parser.add_argument('-f', '--file',
+                        help='read xml from given file instead of downloading'
+                        )
+    args = parser.parse_args()
+
+    if args.dry_run and args.file == None:
+        print "Dry run only possible with --file"
+        exit(1)
+
     start_date = find_latest_start_date(cursor)
     print "Start date: %s" % start_date
 
-    harvest(conn, cursor)
-    #harvest_from_file(conn, cursor, 'some-records.xml')
+    if args.file == None:
+        harvest(conn, cursor)
+    else:
+        harvest_from_file(conn, cursor, args.file, args.dry_run)
     conn.close()
     
 if __name__ == '__main__':
