@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl https://inspirehep.net/record/$1?of=xm
+
