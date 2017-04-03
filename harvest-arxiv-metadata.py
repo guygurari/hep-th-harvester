@@ -13,42 +13,18 @@ arxiv_set = "physics:hep-th"
 earliest_datestamp = '2007-05-23'
 db_filename = "hep-th.sqlite"
 
-is_new_database = not os.path.isfile(db_filename)
-conn = sql.connect(db_filename)
-c = conn.cursor()
-
-if is_new_database:
-    c.execute('''CREATE TABLE papers
-                   (id text, oai_id text, title text, datestamp text,
-                    abstract text, categories text, created text,
-                    doi text, comments text)''')
-    c.execute('''CREATE TABLE authors
-                   (first_name text, last_name text, affiliation text,
-                    paper_id text)''')
-    c.execute('''CREATE UNIQUE INDEX id on papers (id)''')
-    c.execute('''CREATE INDEX datestamp on papers (datestamp)''')
-    c.execute('''CREATE INDEX paper_id on authors (paper_id)''')
-    c.execute('''CREATE INDEX author_name on authors (last_name, first_name)''')
-    conn.commit()
-    start_date = earliest_datestamp
-else:
-    print "Searching for latest datestamp..."
-    c.execute("SELECT MAX(datestamp) FROM papers")
-    start_date = c.fetchone()[0]
-    # Increase by one day to avoid re-downloading the papers from the last day
-    start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-    start_date = start_date + datetime.timedelta(days=1)
-    start_date = start_date.strftime("%Y-%m-%d")
-    
-print "Start date: %s" % start_date
-
 def get_text(found):
     if found is None:
         return ''
     else:
         return found.text
 
-def add_record(c, record):
+def is_in_db(cursor, paper_id):
+    """Is the given paper ID in the database?"""
+    cursor.execute("SELECT id FROM arxiv_papers where id=%s" % paper_id)
+    return cursor.fetchone() != None
+
+def add_record(cursor, record):
     header = record.find(OAI+'header')
     meta = record.find(OAI+'metadata')
     info = meta.find(ARXIV+"arXiv")
@@ -58,6 +34,10 @@ def add_record(c, record):
     datestamp = get_text(header.find(OAI+'datestamp'))
     paper_id = info.find(ARXIV+"id").text
     abstract = get_text(info.find(ARXIV+"abstract")).strip()
+
+    if is_in_db(cursor, paper_id):
+        print "skipping (already in database)"
+        return
 
     print "adding: %s '%s'" % (datestamp, title)
 
@@ -74,11 +54,7 @@ def add_record(c, record):
 
     comments = get_text(info.find(ARXIV+"comments"))
 
-    # (id text, oai_id text, title text, datestamp text,
-    #  abstract text, categories text, created text,
-    #  doi text, comments text))
-
-    c.execute('''INSERT INTO papers VALUES (?,?,?,?,?,?,?,?,?)''',
+    cursor.execute('''INSERT INTO arxiv_papers VALUES (?,?,?,?,?,?,?,?,?)''',
               (paper_id, oai_id, title, datestamp, abstract, categories,
                created, doi, comments))
 
@@ -88,14 +64,11 @@ def add_record(c, record):
             last_name = get_text(author.find(ARXIV+'keyname'))
             first_name = get_text(author.find(ARXIV+'forenames'))
             affiliation = get_text(author.find(ARXIV+'affiliation'))
-
-            #print "author-params: ", (first_name, last_name, affiliation, paper_id)
-
-            c.execute('''INSERT INTO authors VALUES (?,?,?,?)''',
+            cursor.execute('''INSERT INTO arxiv_authors VALUES (?,?,?,?)''',
                       (first_name, last_name, affiliation, paper_id))
             
 
-def harvest(conn, c, arxiv_set):
+def harvest(conn, cursor, arxiv_set):
     base_url = "http://export.arxiv.org/oai2?verb=ListRecords&"
     url = (base_url +
            "from=%s&metadataPrefix=arXiv&set=%s" % (start_date, arxiv_set))
@@ -123,7 +96,7 @@ def harvest(conn, c, arxiv_set):
             break
             
         for record in all_records.findall(OAI+"record"):
-            add_record(c, record)
+            add_record(cursor, record)
 
         conn.commit()
 
@@ -136,5 +109,36 @@ def harvest(conn, c, arxiv_set):
         else:
             url = base_url + "resumptionToken=%s"%(token.text)
             
-harvest(conn, c, arxiv_set)
-conn.close()
+def find_latest_start_date(cursor):
+    cursor.execute("SELECT MAX(datestamp) FROM arxiv_papers")
+    start_date = cursor.fetchone()
+
+    if start_date == None:
+        print "Date not found, starting at earliest datestamp."
+        return earliest_datestamp
+    else:
+        start_date = start_date[0]
+        start_date = re.sub(r'T.*', r'', start_date)
+        # TODO remove once we skip unique papers
+        start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+        start_date = start_date + datetime.timedelta(days=1)
+        start_date = start_date.strftime("%Y-%m-%d")
+        return start_date
+    
+def main():
+    conn = sql.connect(db_filename)
+    cursor = conn.cursor()
+
+    if not os.path.isfile(db_filename):
+        print "Database file %s not found" % db_filename
+        exit(1)
+
+    start_date = find_latest_start_date(cursor)
+    print "Start date: %s" % start_date
+
+    harvest(conn, cursor, arxiv_set)
+    conn.commit()
+    conn.close()
+    
+if __name__ == '__main__':
+    main()

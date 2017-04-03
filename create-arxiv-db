@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+filename=hep-th.sqlite
+
+[[ -f $filename ]] \
+   && print "Database file $filename already exists" \
+   && exit
+
+sqlite3 $filename < create-arxiv-db.sql
+  
