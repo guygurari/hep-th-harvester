@@ -252,10 +252,10 @@ def harvest(conn, cursor):
         f.write(xml)
         f.close()
 
-        print ">>> parsing XML...\n"
+        print ">>> parsing XML\n"
         root = ET.fromstring(xml)
 
-        print ">>> adding records...\n"
+        print ">>> adding records\n"
         records_found = harvest_xml(conn, cursor, root)
 
         if not records_found:
@@ -313,7 +313,7 @@ def main():
     cursor = conn.cursor()
 
     if not os.path.isfile(db_filename):
-        print "Database file %s does not exit" % db_filename
+        print "Database file %s not found" % db_filename
         exit(1)
 
     if not os.path.isdir(working_state_dir):
