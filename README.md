@@ -1,9 +1,12 @@
 # hep-th harvester
 
-Harvests theoretical high-energy physics papers from arXiv and INSPIRE.
-Uses the official OAI interface for bulk harvesting.
-Paper metadata (title, author, references, etc.) is stored in an sqlite
-database. PDF files are stored in S3 (see below for details).
+Harvests theoretical high-energy physics papers from
+[arXiv](https://arxiv.org) and [INSPIRE](http://inspirehep.net).
+Uses the official OAI interfaces (see
+[arXiv](https://arxiv.org/help/bulk_data) and
+[INSPIRE](https://inspirehep.net/info/hep/api)) for bulk harvesting.
+Paper metadata (title, author, references, etc.) is stored in an
+sqlite database. PDF files are stored in S3 (see below for details).
 
 These are the main scripts:
 
