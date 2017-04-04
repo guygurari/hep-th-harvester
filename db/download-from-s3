@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Downloading from S3"
+s3cmd get s3://hep-th/hep-th.sqlite.bz2
+
+echo "Decompressing database"
+bunzip2 hep-th.sqlite.bz2
