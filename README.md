@@ -22,15 +22,9 @@ These are the main scripts:
   first (long) run, download resumes from the most recent paper.
   Subsequent runs only download new papers.
 
-* `pdfs/get-and-filter-arxiv-pdfs.pl` : Download PDFs from an arXiv S3
-  bucket, and keep only the `hep-th` ones.  Before running this
-  script, the list of PDFs should be downloaded by running
-  `download-arxiv-pdf-list`. *Note:* The arXiv bucket is 'requester
-  pays'. To avoid bandwidth costs, it is best to run this script on an
-  EC2 instance in the bucket's region, US-East (Virginia).
+* `pdfs/get-and-filter-arxiv-pdfs.pl` : Download PDFs from an arXiv S3 bucket,
+  and upload the `hep-th` ones to S3.  Relies on having an up-to-date
+  database to figure out which papers are in hep-th.  *Note:* The arXiv
+  bucket is 'requester pays'. To avoid bandwidth costs, it is best to run
+  this script on an EC2 instance in the bucket's region, US-East (Virginia).
 
-* `pdfs/upload-to-s3.pl` : Continuously upload the downloaded PDFs to
-  S3. The upload bucket can be configured in `upload-to-s3.pl`.
-  Can be run concurrently with `pdfs/get-and-filter-arxiv-pdfs.pl` to
-  keep local disk usage low. This is useful on micro EC2 instances which 
-  don't have a lot of local storage.
