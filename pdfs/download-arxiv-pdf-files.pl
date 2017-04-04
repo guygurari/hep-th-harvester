@@ -80,7 +80,7 @@ while (my $line = <$chunk_list_file>) {
         if (Arxiv::is_pdf_in_category($pdf, $category)) {
 			if ($upload_to_s3) {
 				print " in $category, uploading\n";
-				execute("s3cmd --acl-public --quiet put $pdf $upload_bucket_url",
+				execute("s3cmd --acl-public --quiet --no-mime-magic put $pdf $upload_bucket_url",
 					    $num_upload_retries);
 				unlink $pdf || die;
 			}
