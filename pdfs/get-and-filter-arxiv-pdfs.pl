@@ -4,7 +4,26 @@ use strict;
 use warnings;
 use FindBin qw($Script $Dir);
 use IO::File;
+use Getopt::Long;
+
 use Arxiv;
+
+sub usage {
+	print "Usage: $Script [--help] [--upload-to-s3]\n";
+}
+
+my $help = 0;
+my $upload_to_s3 = 0;
+
+GetOptions(
+	'help' => \$help,
+	'upload-to-s3' => \$upload_to_s3,
+);
+
+if ($help) {
+	usage();
+	exit 0;
+}
 
 my $category = 'hep-th';
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";
@@ -59,11 +78,17 @@ while (my $line = <$chunk_list_file>) {
         print "$pdf .. ";
 
         if (Arxiv::is_pdf_in_category($pdf, $category)) {
-            print " in $category, uploading\n";
-			execute("s3cmd put --acl-public $pdf $upload_bucket_url", $num_upload_retries);
-            unlink $pdf || die;
-        }
-        else {
+			if ($upload_to_s3) {
+				print " in $category, uploading\n";
+				execute("s3cmd put --acl-public $pdf $upload_bucket_url",
+					    $num_upload_retries);
+				unlink $pdf || die;
+			}
+			else {
+				print " in $category, keeping\n";
+			}
+		}
+		else {
             print "not in category, deleting\n";
             unlink $pdf || die;
         }
