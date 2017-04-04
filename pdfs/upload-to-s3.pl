@@ -11,7 +11,7 @@ use FindBin qw($Script);
 
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";
 my $done_filename = "done-arxiv-pdfs.txt";
-my $bucket_url = "s3://hep-th";
+my $bucket_url = "s3://hep-th/compressed_pdfs/";
 my $sleep_secs = 60;
 
 sub usage {

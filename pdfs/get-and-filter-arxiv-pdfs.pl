@@ -8,7 +8,11 @@ use Arxiv;
 
 my $category = 'hep-th';
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";
+my $upload_bucket_url = "s3://hep-th/pdfs/";
 my $done_filename = "done-arxiv-pdfs.txt";
+
+print "Updating list of arxiv PDF chunks...\n";
+execute("./download-arxiv-pdf-list");
 
 my $chunk_list_file = IO::File->new("< arxiv-pdfs.txt") || die;
 my $done = read_done_chunks();
@@ -53,8 +57,10 @@ while (my $line = <$chunk_list_file>) {
     foreach my $pdf (@pdfs) {
         print "$pdf .. ";
 
-        if ( Arxiv::is_pdf_in_category($pdf, $category)) {
-            print " in $category\n";
+        if (Arxiv::is_pdf_in_category($pdf, $category)) {
+            print " in $category, uploading\n";
+			execute("s3cmd put --acl-public $pdf $upload_bucket_url");
+            unlink $pdf || die;
         }
         else {
             print "not in category, deleting\n";
