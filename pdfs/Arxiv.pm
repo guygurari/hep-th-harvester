@@ -4,14 +4,15 @@ use IO::File;
 use DBI;
 
 my $ghostscript = "$ENV{HOME}/gs/gs-921-linux-x86_64";
-my $dbfile = '../hep-th.sqlite';
+my $dbfile = '../db/hep-th.sqlite';
 #my $paper_ids;
 
-my $dbh = DBI->connect("dbi:SQLite:dbname=$dbfile","","") || die;
+my $dbh = DBI->connect("dbi:SQLite:dbname=$dbfile","","")
+	|| die "Can't open database";
 
 sub is_paper_in_db {
     my $id = shift;
-    my $sth = $dbh->prepare("SELECT * FROM papers where id='$id'");
+    my $sth = $dbh->prepare("SELECT * FROM arxiv_papers where id='$id'");
     $sth->execute();
     my $row = $sth->fetch();
     return defined $row;

@@ -11,7 +11,7 @@ OAI = "{http://www.openarchives.org/OAI/2.0/}"
 ARXIV = "{http://arxiv.org/OAI/arXiv/}"
 arxiv_set = "physics:hep-th"
 earliest_datestamp = '2007-05-23'
-db_filename = "hep-th.sqlite"
+db_filename = "../db/hep-th.sqlite"
 
 def get_text(found):
     if found is None:
