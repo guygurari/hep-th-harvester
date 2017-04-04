@@ -86,6 +86,11 @@ sub execute {
 
 sub read_done_chunks {
     local $_;
+
+    if (! -f $done_filename) {
+        return {};
+    }
+
     my $done_file = IO::File->new("< $done_filename");
     my $done = {};
     while (<$done_file>) {
