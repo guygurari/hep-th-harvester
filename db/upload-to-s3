@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Compressing database"
+bzip2 hep-th.sqlite
+
+echo "Uploading to S3"
+s3cmd put hep-th.sqlite.bz2 s3://hep-th
+
+echo "Decompressing database"
+bunzip2 hep-th.sqlite.bz2
