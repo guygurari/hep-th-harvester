@@ -42,7 +42,7 @@ while (my $line = <$chunk_list_file>) {
     chomp $line;
     $line =~ /s3:.*tar/ || next;
     my $chunk_url = $&;
-    print "$chunk_url\n";
+    #print "$chunk_url\n";
     my $chunk_file = $chunk_url;
     $chunk_file =~ s/.*\///;
 
