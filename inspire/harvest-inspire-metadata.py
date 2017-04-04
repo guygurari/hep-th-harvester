@@ -13,7 +13,7 @@ base_harvesting_url = "http://inspirehep.net/oai2d?verb=ListRecords&"
 metadata_prefix = "marcxml"
 data_set = "INSPIRE:HEP"
 earliest_datestamp = '1934-10-31' # from 'verb=Identify'
-db_filename = "inspire.sqlite"
+db_filename = "../hep-th.sqlite"
 
 working_state_dir = 'working-state'
 resumption_token_file = '%s/inspire-resumption-token.txt' % working_state_dir
@@ -203,7 +203,7 @@ def save_resumption_token(token):
     with open(resumption_token_file, 'w') as f:
         f.write(token)
 
-def clear_resumption_token(token):
+def clear_resumption_token():
     if os.path.isfile(resumption_token_file):
         os.remove(resumption_token_file)
 
@@ -266,6 +266,7 @@ def harvest(conn, cursor):
         # there is more to be fetched.
         token = root.find(OAI+'ListRecords').find(OAI+"resumptionToken")
         if token is None or token.text is None:
+            print "\nNo resumption token given, we are done."
             clear_resumption_token()
             break
         else:

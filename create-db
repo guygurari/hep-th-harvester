@@ -1,10 +1,10 @@
 #!/bin/zsh
 
-filename=inspire.sqlite
+filename=hep-th.sqlite
 
 [[ -f $filename ]] \
    && print "Database file $filename already exists" \
    && exit
 
-sqlite3 $filename < create-inspire-db.sql
+sqlite3 $filename < create-db.sql
   
