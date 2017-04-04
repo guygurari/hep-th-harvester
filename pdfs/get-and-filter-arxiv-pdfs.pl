@@ -9,6 +9,7 @@ use Arxiv;
 my $category = 'hep-th';
 my $s3 = "$ENV{HOME}/s3cmd-master/s3cmd";
 my $upload_bucket_url = "s3://hep-th/pdfs/";
+my $num_upload_retries = 3;
 my $done_filename = "done-arxiv-pdfs.txt";
 
 print "Updating list of arxiv PDF chunks...\n";
@@ -59,7 +60,7 @@ while (my $line = <$chunk_list_file>) {
 
         if (Arxiv::is_pdf_in_category($pdf, $category)) {
             print " in $category, uploading\n";
-			execute("s3cmd put --acl-public $pdf $upload_bucket_url");
+			execute("s3cmd put --acl-public $pdf $upload_bucket_url", $num_upload_retries);
             unlink $pdf || die;
         }
         else {
@@ -77,11 +78,25 @@ $chunk_list_file->close();
 $done_file->close();
 
 sub execute {
-    my $cmd = shift;
-    print "$cmd\n\n";
-    system($cmd);
-    my $rc = $? >> 8;
-    die "Error running command: $@" if $rc;
+    my ($cmd, $num_attempts) = @_;
+    $num_attempts = 1 unless defined $num_attempts;
+    my $rc;
+
+    while ($num_attempts > 0) {
+        print "$cmd\n\n";
+        system($cmd);
+        $rc = $? >> 8;
+        last if $rc == 0;
+
+        $num_attempts--;
+
+        if ($num_attempts == 0) {
+            die "Error running command: $@" if $rc;
+        }
+        else {
+            print "Command failed, retrying... Error: $@\n";
+        }
+    }
 }
 
 sub read_done_chunks {
