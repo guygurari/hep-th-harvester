@@ -21,7 +21,7 @@ def get_text(found):
 
 def is_in_db(cursor, paper_id):
     """Is the given paper ID in the database?"""
-    cursor.execute("SELECT id FROM arxiv_papers where id=%s" % paper_id)
+    cursor.execute("SELECT id FROM arxiv_papers where id=?", (paper_id,))
     return cursor.fetchone() != None
 
 def add_record(cursor, record):
@@ -36,10 +36,10 @@ def add_record(cursor, record):
     abstract = get_text(info.find(ARXIV+"abstract")).strip()
 
     if is_in_db(cursor, paper_id):
-        print "skipping (already in database)"
+        print "%s : skipping (already in database)" % paper_id
         return
 
-    print "adding: %s '%s'" % (datestamp, title)
+    print "%s : adding : %s '%s'" % (paper_id, datestamp, title)
 
     created = get_text(info.find(ARXIV+"created"))
     #created = datetime.datetime.strptime(created, "%Y-%m-%d")
@@ -69,6 +69,9 @@ def add_record(cursor, record):
             
 
 def harvest(conn, cursor, arxiv_set):
+    start_date = find_latest_start_date(cursor)
+    print "Start date: %s" % start_date
+
     base_url = "http://export.arxiv.org/oai2?verb=ListRecords&"
     url = (base_url +
            "from=%s&metadataPrefix=arXiv&set=%s" % (start_date, arxiv_set))
@@ -105,6 +108,7 @@ def harvest(conn, cursor, arxiv_set):
         # there is more to be fetched.
         token = root.find(OAI+'ListRecords').find(OAI+"resumptionToken")
         if token is None or token.text is None:
+            print "No resumption token, we are done"
             break
         else:
             url = base_url + "resumptionToken=%s"%(token.text)
@@ -118,11 +122,9 @@ def find_latest_start_date(cursor):
         return earliest_datestamp
     else:
         start_date = start_date[0]
-        start_date = re.sub(r'T.*', r'', start_date)
-        # TODO remove once we skip unique papers
-        start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-        start_date = start_date + datetime.timedelta(days=1)
-        start_date = start_date.strftime("%Y-%m-%d")
+        # start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+        # start_date = start_date + datetime.timedelta(days=1)
+        # start_date = start_date.strftime("%Y-%m-%d")
         return start_date
     
 def main():
@@ -132,9 +134,6 @@ def main():
     if not os.path.isfile(db_filename):
         print "Database file %s not found" % db_filename
         exit(1)
-
-    start_date = find_latest_start_date(cursor)
-    print "Start date: %s" % start_date
 
     harvest(conn, cursor, arxiv_set)
     conn.commit()
