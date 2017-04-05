@@ -13,7 +13,7 @@ base_harvesting_url = "http://inspirehep.net/oai2d?verb=ListRecords&"
 metadata_prefix = "marcxml"
 data_set = "INSPIRE:HEP"
 earliest_datestamp = '1934-10-31' # from 'verb=Identify'
-db_filename = "../db/hep-th.sqlite"
+db_filename = "db/hep-th.sqlite"
 
 working_state_dir = 'working-state'
 resumption_token_file = '%s/inspire-resumption-token.txt' % working_state_dir
