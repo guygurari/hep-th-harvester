@@ -12,11 +12,11 @@ These are the main scripts:
 
 * `db/create-db` : Create the database `hep-th.sqlite`
 
-* `arxiv/harvest-arxiv-metadata.py` : Download the full hep-th arXiv into 
+* `harvest-arxiv-metadata.py` : Download the full hep-th arXiv into 
   the database. The first run takes a long time (possibly hours).
   Subsequent runs will only download new papers.
 
-* `inspire/harvest-inspire-metadata.py` : Download the full INSPIRE
+* `harvest-inspire-metadata.py` : Download the full INSPIRE
   hep-th records into the database. This includes references for each paper.
   First run can take a day or more. If stopped and re-started during this
   first (long) run, download resumes from the most recent paper.
