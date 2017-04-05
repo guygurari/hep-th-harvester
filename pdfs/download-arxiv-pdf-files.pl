@@ -56,7 +56,7 @@ while (my $line = <$chunk_list_file>) {
     #}
 
 	print ">>> Downloading $chunk_url ...\n\n";
-	execute("$s3 get --requester-pays $chunk_url");
+	execute("$s3 get --requester-pays --continue $chunk_url");
 
     die "Missing file $chunk_file" unless -f $chunk_file;
 
@@ -104,7 +104,7 @@ while (my $line = <$chunk_list_file>) {
 
 	# Delete the subdirs created by tar
 	if ($upload_to_s3 && defined $tar_subdir) {
-		unlink $tar_subdir;
+		rmdir $tar_subdir || warn "Failed to delete directory '$tar_subdir'";
 	}
 
     unlink $chunk_file;
@@ -121,7 +121,7 @@ sub execute {
     my $rc;
 
     while ($num_attempts > 0) {
-        print "$cmd\n\n";
+        print "Running: $cmd\n\n";
         system($cmd);
         $rc = $? >> 8;
         last if $rc == 0;
