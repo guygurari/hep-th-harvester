@@ -21,7 +21,7 @@ if (scalar(@ARGV) != 1) {
 
 my $id = $ARGV[0];
 
-my $sth = $dbh->prepare("SELECT * FROM papers where id='$id'");
+my $sth = $dbh->prepare("SELECT * FROM arxiv_papers where id='$id'");
 $sth->execute();
 my $row = $sth->fetch();
 

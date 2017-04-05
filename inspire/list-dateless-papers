@@ -1,2 +1,0 @@
-#!/bin/zsh
-sqlite3 inspire.sqlite 'select id from inspire_papers where publication_date is null;'
