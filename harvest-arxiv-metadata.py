@@ -108,7 +108,7 @@ def harvest(conn, cursor, arxiv_set):
         # there is more to be fetched.
         token = root.find(OAI+'ListRecords').find(OAI+"resumptionToken")
         if token is None or token.text is None:
-            print "No resumption token, we are done"
+            print "\nNo resumption token, we are done\n"
             break
         else:
             url = base_url + "resumptionToken=%s"%(token.text)
