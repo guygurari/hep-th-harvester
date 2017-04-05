@@ -1,0 +1,1 @@
+pdfs/done-arxiv-pdfs.txt is part of the download state, so it should be stored in S3 along with the PDFs.
