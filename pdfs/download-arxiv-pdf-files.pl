@@ -63,6 +63,7 @@ while (my $line = <$chunk_list_file>) {
     print ">>> Unpacking $chunk_file ...\n\n";
     my $tar = IO::File->new("tar xvf $chunk_file |") || die;
     my $maybe_pdf_filename;
+	my $tar_subdir;
     my @pdfs;
 
     while ($maybe_pdf_filename = <$tar>) {
@@ -71,6 +72,13 @@ while (my $line = <$chunk_list_file>) {
         if ($maybe_pdf_filename =~ /\.pdf/) {
             push @pdfs, $maybe_pdf_filename;
         }
+
+		my $subdir = $maybe_pdf_filename;
+		$subdir =~ s/\/.*$//;
+
+		if (-d $subdir) {
+			$tar_subdir = $subdir;
+		}
     }
 
     print ">>> Filtering $chunk_file ...\n\n";
@@ -79,7 +87,7 @@ while (my $line = <$chunk_list_file>) {
 
         if (Arxiv::is_pdf_in_category($pdf, $category)) {
 			if ($upload_to_s3) {
-				print " in $category, uploading\n";
+				print "in $category, uploading\n";
 				execute("$s3 --acl-public --quiet --no-mime-magic put $pdf $upload_bucket_url",
 					    $num_upload_retries);
 				unlink $pdf || die;
@@ -93,6 +101,11 @@ while (my $line = <$chunk_list_file>) {
             unlink $pdf || die;
         }
     }
+
+	# Delete the subdirs created by tar
+	if ($upload_to_s3 && defined $tar_subdir) {
+		unlink $tar_subdir;
+	}
 
     unlink $chunk_file;
     $done_file->print("$chunk_url\n");
