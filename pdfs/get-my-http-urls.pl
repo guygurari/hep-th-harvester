@@ -7,7 +7,7 @@ use strict;
 use warnings;
 use IO::File;
 
-my $in = IO::File->new("s3cmd ls s3://hep-th/pdfs |");
+my $in = IO::File->new("s3cmd ls 's3://hep-th/pdfs/*.pdf' |");
 my $out = IO::File->new("> hep-th-urls.txt");
 
 while (<$in>) {
