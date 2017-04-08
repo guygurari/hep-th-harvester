@@ -9,15 +9,15 @@ use Getopt::Long;
 use Arxiv;
 
 sub usage {
-	print "Usage: $Script [--help] [--upload-to-s3]\n";
+	print "Usage: $Script [--help] [--save-locally]\n";
 }
 
 my $help = 0;
-my $upload_to_s3 = 0;
+my $save_locally = 0;
 
 GetOptions(
 	'help' => \$help,
-	'upload-to-s3' => \$upload_to_s3,
+	'save-locally' => \$save_locally,
 );
 
 if ($help) {
@@ -86,14 +86,14 @@ while (my $line = <$chunk_list_file>) {
         print "$pdf .. ";
 
         if (Arxiv::is_pdf_in_category($pdf, $category)) {
-			if ($upload_to_s3) {
+			if ($save_locally) {
+				print " in $category, keeping\n";
+			}
+            else {
 				print "in $category, uploading\n";
 				execute("$s3 --acl-public --quiet --no-mime-magic put $pdf $upload_bucket_url",
 					    $num_upload_retries);
 				unlink $pdf || die;
-			}
-			else {
-				print " in $category, keeping\n";
 			}
 		}
 		else {
@@ -103,7 +103,7 @@ while (my $line = <$chunk_list_file>) {
     }
 
 	# Delete the subdirs created by tar
-	if ($upload_to_s3 && defined $tar_subdir) {
+	if (!$save_locally && defined $tar_subdir) {
 		rmdir $tar_subdir || warn "Failed to delete directory '$tar_subdir'";
 	}
 
